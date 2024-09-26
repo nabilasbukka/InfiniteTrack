@@ -1,0 +1,42 @@
+# Xcode
+**/xcuserdata/
+**/DerivedData/
+**/build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata
+*.xcworkspace
+
+# Swift Package Manager
+.build/
+.swiftpm/xcode
+Package.resolved
+
+# Carthage
+Carthage/Build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+.flutter-plugins
+.flutter-plugins-dependencies
+.symlinks/
+.dart_tool/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+fastlane/report.html
+
+# AppCode
+.idea/
+
+# macOS
+*.DS_Store
+
+# Xcode iOS/macOS
+*.xcuserstate
