@@ -32,6 +32,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C91B6FA52DCE02A0005CF46A /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				C91B6FA82DCE02FF005CF46A /* Home */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		C91B6FA62DCE02B1005CF46A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C91B6FA72DCE02B7005CF46A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C91B6FA82DCE02FF005CF46A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		C9B8DEBD2CA51293006F4B66 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +80,9 @@
 		C9B8DEC82CA51293006F4B66 /* InfiniteTrack */ = {
 			isa = PBXGroup;
 			children = (
+				C91B6FA72DCE02B7005CF46A /* Base */,
+				C91B6FA62DCE02B1005CF46A /* Components */,
+				C91B6FA52DCE02A0005CF46A /* Pages */,
 				C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */,
 				C9B8DECB2CA51293006F4B66 /* ContentView.swift */,
 				C9B8DECD2CA51294006F4B66 /* Assets.xcassets */,
