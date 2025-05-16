@@ -9,12 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack {
-            Image("Background")
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
-            
+        ScrollView {
             VStack {
                 HStack {
                     Text("Monday, 09 September 2024")
@@ -29,35 +24,71 @@ struct HomeView: View {
                             .fill(Color.primary500)
                             .frame(width: 144, height: 20)
                             .cornerRadius(10)
+                        HStack {
+                            Image(.icPinLocation)
                             
-                        Text("Nongsa Digital Park")
-                            .foregroundColor(.violet50)
-                            .font(.system(size: 10))
+                            Text("Nongsa Digital Park")
+                                .foregroundColor(.violet50)
+                                .font(.system(size: 10))
+                        }
                     }
                     .padding(.trailing, 15)
                 }
                 
-                HomeSummaryCardView()
+                HomeSummaryCardView(greetingMessage: "Good Morning🌞", name: "Nabila Putri Syafrina Bukka", role: "Web Technical Mentor", imageProfile: Image("img_profile"), availableLeaveCount: "8", leaveUsedCount: "2")
                 
-                SectionHeaderView(title: "List Time-Off Request", showMoreAction: {})
+                HStack {
+                    Text("Top 3 Early Birds")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                }
+                .padding(8)
+                
+                ForEach(1...3, id: \.self) { rank in
+                    AttendanceRankCardView(
+                        rank: "\(rank)",
+                        profileImage: Image("img_profile"),
+                        name: "Nabila",
+                        checkinTime: "08:00",
+                        timeAgo: "5 minutes ago"
+                    )
+                    .padding(.horizontal,8)
+                }
+
+                HStack {
+                    Text("Top 3 Late Check-ins")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                }
+                .padding(8)
+                
+                ForEach(1...3, id: \.self) { rank in
+                    AttendanceRankCardView(
+                        rank: "\(rank)",
+                        profileImage: Image("img_profile"),
+                        name: "Nabila",
+                        checkinTime: "08:00",
+                        timeAgo: "5 minutes ago"
+                    )
+                    .padding(.horizontal,8)
+                }
+                
+                SectionHeaderView(title: "Attandance History", showMoreAction: {})
                     .padding(.top, 18)
                     .padding(.horizontal, 10)
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    ForEach(0..<2, id: \.self) { _ in
-                        TimeOffRequestCardView(
-                            profileImage: Image("Profile"),
-                            name: "Gabriela",
-                            role: "CEO",
-                            leaveStartDate: "24 Mar 2025",
-                            leaveEndDate: "25 Mar 2025",
-                            timeAgo: "5 minutes ago"
-                        )
+                    ForEach(0..<5, id: \.self) { _ in
+                        AttendanceHistoryCardItemView(date: "09", monthYear: "May 2025", checkInTime: "08:00", checkOutTime: "17:00", totalHours: "08:00")
                     }
                 }
-                .padding(.horizontal, 10)
             }
         }
+        .pageBackground()
     }
 }
 

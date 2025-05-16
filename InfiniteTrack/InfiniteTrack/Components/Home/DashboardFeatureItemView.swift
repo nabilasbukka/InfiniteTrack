@@ -33,5 +33,5 @@ struct DashboardFeatureItemView: View {
 }
 
 #Preview {
-    DashboardFeatureItemView(imageName: "LiveAttandance", title: "Live Attandance")
+    DashboardFeatureItemView(imageName: "ic_live_attendance", title: "Live Attendance")
 }

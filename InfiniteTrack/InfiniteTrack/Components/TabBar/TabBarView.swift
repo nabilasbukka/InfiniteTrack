@@ -11,7 +11,7 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             Tab("Home", systemImage: "house.fill") {
-                EmptyView()
+                HomeView()
             }
             
             Tab("Contact", systemImage: "phone.fill") {
@@ -27,7 +27,7 @@ struct TabBarView: View {
             }
             
             Tab("Profile", systemImage: "person.fill") {
-                EmptyView()
+                ProfileView()
             }
         }
     }

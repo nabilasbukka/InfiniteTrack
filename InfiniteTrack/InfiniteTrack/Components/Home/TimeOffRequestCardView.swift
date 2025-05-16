@@ -56,5 +56,5 @@ struct TimeOffRequestCardView: View {
 }
 
 #Preview {
-    TimeOffRequestCardView(profileImage: Image("Profile"), name: "Nabila", role: "Tech Web Mentor", leaveStartDate: "24 Mar 2025", leaveEndDate: "25 Mar 2025", timeAgo: "5 minutes ago")
+    TimeOffRequestCardView(profileImage: Image("img_profile"), name: "Nabila", role: "Tech Web Mentor", leaveStartDate: "24 Mar 2025", leaveEndDate: "25 Mar 2025", timeAgo: "5 minutes ago")
 }

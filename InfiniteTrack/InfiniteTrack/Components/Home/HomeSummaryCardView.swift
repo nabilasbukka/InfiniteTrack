@@ -8,37 +8,45 @@
 import SwiftUI
 
 struct HomeSummaryCardView: View {
+    var greetingMessage: String
+    var name: String
+    var role: String
+    var imageProfile: Image
+    var availableLeaveCount: String
+    var leaveUsedCount: String
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Good Morning🌞,")
+                    Text(greetingMessage)
                         .foregroundColor(.dark400)
                         .font(.system(size: 10))
-                    Text("Mhmmd Febriyadi")
+                    Text(name)
                         .foregroundColor(.dark500)
                         .font(.system(size: 20))
-                    Text("Mobile Development")
+                    Text(role)
                         .foregroundColor(.dark300)
                         .font(.system(size: 12))
                 }
                 
                 Spacer()
                 
-                Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .frame(width: 34, height: 34)
+                Image("img_profile")
+                    .resizable()
+                    .frame(width: 34, height: 34)
+                    .clipShape(Circle())
             }
-
+            
             VStack(alignment: .leading) {
                 Text("Available Leave Days")
                     .foregroundColor(.black)
                     .font(.system(size: 10))
                     .fontWeight(.thin)
-                Text("8 Days")
+                Text("\(availableLeaveCount) Days")
                     .foregroundColor(.dark500)
                     .font(.system(size: 20))
-                Text("2 Used of 10")
+                Text("\(leaveUsedCount) Used of 10")
                     .foregroundColor(.black)
                     .font(.system(size: 11))
                     .fontWeight(.thin)
@@ -55,8 +63,8 @@ struct HomeSummaryCardView: View {
             HStack(spacing: 87) {
                 ForEach(0..<2, id: \.self) { _ in
                     DashboardFeatureItemView(
-                        imageName: "LiveAttandance",
-                        title: "Live Attandance"
+                        imageName: "ic_live_attendance",
+                        title: "Live Attendance"
                     )
                 }
             }
@@ -74,5 +82,5 @@ struct HomeSummaryCardView: View {
 }
 
 #Preview {
-    HomeSummaryCardView()
+    HomeSummaryCardView(greetingMessage: "Good Morning🌞", name: "Nabila", role: "CEO", imageProfile: Image("img_profile"), availableLeaveCount: "8", leaveUsedCount: "2")
 }

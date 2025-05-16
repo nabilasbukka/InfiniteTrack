@@ -21,6 +21,10 @@
 		C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DECB2CA51293006F4B66 /* ContentView.swift */; };
 		C9B8DECE2CA51294006F4B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B8DECD2CA51294006F4B66 /* Assets.xcassets */; };
 		C9B8DED12CA51294006F4B66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B8DED02CA51294006F4B66 /* Preview Assets.xcassets */; };
+		C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */; };
+		C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */; };
+		C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495592DD722AC008A17A9 /* View+Extension.swift */; };
+		C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		C9B8DECB2CA51293006F4B66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C9B8DECD2CA51294006F4B66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B8DED02CA51294006F4B66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryCardItemView.swift; sourceTree = "<group>"; };
+		C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundViewModifier.swift; sourceTree = "<group>"; };
+		C9E495592DD722AC008A17A9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRankCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C905748E2DD491FD0061EEF0 /* Color+Extension.swift */,
+				C9E495592DD722AC008A17A9 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -106,11 +115,8 @@
 		C91B6FA62DCE02B1005CF46A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C905742F2DD451C10061EEF0 /* TabBarView.swift */,
-				C90574902DD498A70061EEF0 /* HomeSummaryCardView.swift */,
-				C90574922DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift */,
-				C97185D22DD5F3A2004A1F7A /* SectionHeaderView.swift */,
-				C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */,
+				C9E4955E2DD74261008A17A9 /* Home */,
+				C9E4955D2DD74251008A17A9 /* TabBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -167,6 +173,28 @@
 				C9B8DED02CA51294006F4B66 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9E4955D2DD74251008A17A9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C905742F2DD451C10061EEF0 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		C9E4955E2DD74261008A17A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C90574902DD498A70061EEF0 /* HomeSummaryCardView.swift */,
+				C90574922DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift */,
+				C97185D22DD5F3A2004A1F7A /* SectionHeaderView.swift */,
+				C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */,
+				C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */,
+				C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */,
+				C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +273,16 @@
 				C905743B2DD481520061EEF0 /* MyLeaveView.swift in Sources */,
 				C90574322DD456650061EEF0 /* HomeView.swift in Sources */,
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
+				C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */,
+				C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */,
 				C90574302DD451C10061EEF0 /* TabBarView.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
 				C90574372DD481240061EEF0 /* ContactView.swift in Sources */,
 				C90574392DD481390061EEF0 /* ProfileView.swift in Sources */,
+				C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */,
 				C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */,
 				C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */,
+				C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
