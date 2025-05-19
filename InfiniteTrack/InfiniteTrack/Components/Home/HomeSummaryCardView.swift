@@ -14,6 +14,7 @@ struct HomeSummaryCardView: View {
     var imageProfile: Image
     var availableLeaveCount: String
     var leaveUsedCount: String
+    var goToLiveAttendance: () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -61,12 +62,17 @@ struct HomeSummaryCardView: View {
             .padding(.top, 12)
             
             HStack(spacing: 87) {
-                ForEach(0..<2, id: \.self) { _ in
-                    DashboardFeatureItemView(
-                        imageName: "ic_live_attendance",
-                        title: "Live Attendance"
-                    )
-                }
+                DashboardFeatureItemView(
+                    imageName: "ic_live_attendance",
+                    title: "Live Attendance",
+                    onTap: goToLiveAttendance
+                )
+                
+                DashboardFeatureItemView(
+                    imageName: "ic_live_attendance",
+                    title: "Live Attendance",
+                    onTap: goToLiveAttendance
+                )
             }
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.top, 11)
@@ -81,6 +87,6 @@ struct HomeSummaryCardView: View {
     }
 }
 
-#Preview {
-    HomeSummaryCardView(greetingMessage: "Good Morning🌞", name: "Nabila", role: "CEO", imageProfile: Image("img_profile"), availableLeaveCount: "8", leaveUsedCount: "2")
-}
+//#Preview {
+//    HomeSummaryCardView(greetingMessage: "Good Morning🌞", name: "Nabila", role: "CEO", imageProfile: Image("img_profile"), availableLeaveCount: "8", leaveUsedCount: "2")
+//}

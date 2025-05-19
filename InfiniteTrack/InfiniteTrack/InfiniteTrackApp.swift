@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct InfiniteTrackApp: App {
+    @StateObject var navState = NavigationState()
+
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            if navState.isShowingFullScreenView {
+                FullScreenRouterView()
+                    .environmentObject(navState)
+            } else {
+                MainTabView()
+                    .environmentObject(navState)
+            }
         }
     }
 }

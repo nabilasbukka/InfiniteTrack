@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90574302DD451C10061EEF0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C905742F2DD451C10061EEF0 /* TabBarView.swift */; };
+		C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C905742F2DD451C10061EEF0 /* MainTabView.swift */; };
 		C90574322DD456650061EEF0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574312DD456650061EEF0 /* HomeView.swift */; };
 		C90574372DD481240061EEF0 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574362DD481240061EEF0 /* ContactView.swift */; };
 		C90574392DD481390061EEF0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574382DD481390061EEF0 /* ProfileView.swift */; };
@@ -15,8 +15,13 @@
 		C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C905748E2DD491FD0061EEF0 /* Color+Extension.swift */; };
 		C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574902DD498A70061EEF0 /* HomeSummaryCardView.swift */; };
 		C90574932DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574922DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift */; };
+		C96373D32DDAF0A000807E47 /* CompleteProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */; };
+		C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D42DDB106000807E47 /* LiveAttendanceView.swift */; };
+		C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D82DDB2AD000807E47 /* NavigationState.swift */; };
+		C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */; };
 		C97185D32DD5F3A2004A1F7A /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97185D22DD5F3A2004A1F7A /* SectionHeaderView.swift */; };
 		C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */; };
+		C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */; };
 		C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */; };
 		C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DECB2CA51293006F4B66 /* ContentView.swift */; };
 		C9B8DECE2CA51294006F4B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B8DECD2CA51294006F4B66 /* Assets.xcassets */; };
@@ -28,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C905742F2DD451C10061EEF0 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		C905742F2DD451C10061EEF0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C90574312DD456650061EEF0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C90574362DD481240061EEF0 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		C90574382DD481390061EEF0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -36,8 +41,13 @@
 		C905748E2DD491FD0061EEF0 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		C90574902DD498A70061EEF0 /* HomeSummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSummaryCardView.swift; sourceTree = "<group>"; };
 		C90574922DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFeatureItemView.swift; sourceTree = "<group>"; };
+		C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileInfoView.swift; sourceTree = "<group>"; };
+		C96373D42DDB106000807E47 /* LiveAttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAttendanceView.swift; sourceTree = "<group>"; };
+		C96373D82DDB2AD000807E47 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenRouterView.swift; sourceTree = "<group>"; };
 		C97185D22DD5F3A2004A1F7A /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOffRequestCardView.swift; sourceTree = "<group>"; };
+		C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryView.swift; sourceTree = "<group>"; };
 		C9B8DEC62CA51293006F4B66 /* InfiniteTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteTrackApp.swift; sourceTree = "<group>"; };
 		C9B8DECB2CA51293006F4B66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 		C91B6FA62DCE02B1005CF46A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C96373D12DDAF06800807E47 /* PopUpInformation */,
 				C9E4955E2DD74261008A17A9 /* Home */,
 				C9E4955D2DD74251008A17A9 /* TabBar */,
 			);
@@ -132,8 +143,20 @@
 			isa = PBXGroup;
 			children = (
 				C90574312DD456650061EEF0 /* HomeView.swift */,
+				C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */,
+				C96373D42DDB106000807E47 /* LiveAttendanceView.swift */,
+				C96373D82DDB2AD000807E47 /* NavigationState.swift */,
+				C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C96373D12DDAF06800807E47 /* PopUpInformation */ = {
+			isa = PBXGroup;
+			children = (
+				C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */,
+			);
+			path = PopUpInformation;
 			sourceTree = "<group>";
 		};
 		C9B8DEBD2CA51293006F4B66 = {
@@ -178,7 +201,7 @@
 		C9E4955D2DD74251008A17A9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				C905742F2DD451C10061EEF0 /* TabBarView.swift */,
+				C905742F2DD451C10061EEF0 /* MainTabView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -275,14 +298,19 @@
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
 				C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */,
 				C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */,
-				C90574302DD451C10061EEF0 /* TabBarView.swift in Sources */,
+				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
+				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
 				C90574372DD481240061EEF0 /* ContactView.swift in Sources */,
 				C90574392DD481390061EEF0 /* ProfileView.swift in Sources */,
+				C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */,
+				C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */,
 				C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */,
 				C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */,
+				C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */,
 				C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */,
 				C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */,
+				C96373D32DDAF0A000807E47 /* CompleteProfileInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

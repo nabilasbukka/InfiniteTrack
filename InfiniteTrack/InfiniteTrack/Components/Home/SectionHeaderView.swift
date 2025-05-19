@@ -30,5 +30,5 @@ struct SectionHeaderView: View {
 
 
 #Preview {
-    SectionHeaderView(title: "List Time-Off Request", showMoreAction: {})
+    SectionHeaderView(title: "Attendance History", showMoreAction: {})
 }

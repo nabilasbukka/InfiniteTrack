@@ -10,7 +10,8 @@ import SwiftUI
 struct DashboardFeatureItemView: View {
     var imageName: String
     var title: String
-
+    var onTap: (() -> Void)? = nil
+    
     var body: some View {
         VStack(spacing: 8) {
             Image(imageName)
@@ -29,6 +30,10 @@ struct DashboardFeatureItemView: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.primary500.opacity(0.5), lineWidth: 1)
         )
+        .contentShape(Rectangle())
+        .onTapGesture {
+            onTap?()
+        }
     }
 }
 
