@@ -19,11 +19,17 @@ struct SectionHeaderView: View {
 
             Spacer()
 
-            Button(action: showMoreAction) {
+            NavigationLink {
+                AttendanceHistoryView()
+            } label: {
                 Text("See More")
                     .font(.system(size: 13))
                     .foregroundColor(.primary500)
             }
+
+//            Button(action: showMoreAction) {
+//
+//            }
         }
     }
 }

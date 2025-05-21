@@ -26,24 +26,24 @@ struct AttendanceRankCardView: View {
                 .frame(width: 44, height: 44)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     Text(name)
-                        .font(.system(size: 10, weight: .medium))
+                        .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.dark500)
                     
                     Spacer()
                     
                     Text(timeAgo)
-                        .font(.system(size: 8, weight: .thin))
+                        .font(.system(size: 12, weight: .thin))
                         .foregroundColor(.dark500)
                 }
                 Text("Check in: \(checkinTime)")
-                    .font(.system(size: 8, weight: .medium))
+                    .font(.system(size: 12, weight: .medium))
                     .foregroundColor(.primary500)
             }
         }
-        .padding(8)
+        .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.white)

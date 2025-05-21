@@ -12,4 +12,8 @@ extension View {
     func pageBackground() -> some View {
         return modifier(PageBackgroundViewModifier())
     }
+    
+    func customBackButton() -> some View {
+        return modifier(BackButtonViewModifier())
+    }
 }

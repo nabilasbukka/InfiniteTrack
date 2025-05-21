@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AttendanceHistoryView: View {
-    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(spacing: 16) {
@@ -68,22 +67,7 @@ struct AttendanceHistoryView: View {
         }
         .navigationTitle("My Attendance")
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(Color.primary500)
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color.purple, lineWidth: 1)
-                        )
-                }
-            }
-        }
+        .customBackButton()
         .background(
             LinearGradient(
                 gradient: Gradient(colors: [Color.white.opacity(0.6), Color.yellow.opacity(0.1)]),

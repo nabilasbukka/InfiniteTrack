@@ -22,7 +22,7 @@ struct HomeSummaryCardView: View {
                 VStack(alignment: .leading) {
                     Text(greetingMessage)
                         .foregroundColor(.dark400)
-                        .font(.system(size: 10))
+                        .font(.system(size: 14))
                     Text(name)
                         .foregroundColor(.dark500)
                         .font(.system(size: 20))
@@ -39,27 +39,28 @@ struct HomeSummaryCardView: View {
                     .clipShape(Circle())
             }
             
-            VStack(alignment: .leading) {
-                Text("Available Leave Days")
-                    .foregroundColor(.black)
-                    .font(.system(size: 10))
-                    .fontWeight(.thin)
-                Text("\(availableLeaveCount) Days")
-                    .foregroundColor(.dark500)
-                    .font(.system(size: 20))
-                Text("\(leaveUsedCount) Used of 10")
-                    .foregroundColor(.black)
-                    .font(.system(size: 11))
-                    .fontWeight(.thin)
-                
-                ProgressView(value: 0.8)
-                    .progressViewStyle(LinearProgressViewStyle())
-                    .accentColor(.primary500)
-                    .frame(height: 8)
-                    .background(Color.gray.opacity(0.3))
-                    .cornerRadius(4)
-            }
-            .padding(.top, 12)
+            // will available soon
+//            VStack(alignment: .leading) {
+//                Text("Available Leave Days")
+//                    .foregroundColor(.black)
+//                    .font(.system(size: 10))
+//                    .fontWeight(.thin)
+//                Text("\(availableLeaveCount) Days")
+//                    .foregroundColor(.dark500)
+//                    .font(.system(size: 20))
+//                Text("\(leaveUsedCount) Used of 10")
+//                    .foregroundColor(.black)
+//                    .font(.system(size: 11))
+//                    .fontWeight(.thin)
+//                
+//                ProgressView(value: 0.8)
+//                    .progressViewStyle(LinearProgressViewStyle())
+//                    .accentColor(.primary500)
+//                    .frame(height: 8)
+//                    .background(Color.gray.opacity(0.3))
+//                    .cornerRadius(4)
+//            }
+//            .padding(.top, 12)
             
             HStack(spacing: 87) {
                 DashboardFeatureItemView(
@@ -69,9 +70,9 @@ struct HomeSummaryCardView: View {
                 )
                 
                 DashboardFeatureItemView(
-                    imageName: "ic_live_attendance",
-                    title: "Live Attendance",
-                    onTap: goToLiveAttendance
+                    imageName: "ic_time_off_request",
+                    title: "Time-Off Request",
+                    isLocked: true
                 )
             }
             .frame(maxWidth: .infinity, alignment: .center)

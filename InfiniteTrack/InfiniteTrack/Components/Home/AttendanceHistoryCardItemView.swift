@@ -15,7 +15,7 @@ struct AttendanceHistoryCardItemView: View {
     var totalHours: String
     
     var body: some View {
-        HStack(alignment: .center, spacing: 24) {
+        HStack(alignment: .center, spacing: 0) {
             HStack {
                 Text(date)
                     .font(.system(size: 24, weight: .medium))
@@ -29,50 +29,61 @@ struct AttendanceHistoryCardItemView: View {
             .background(Color.primary500)
             .cornerRadius(8)
             
-            VStack {
-                Text(checkInTime)
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.dark500)
+            HStack {
+                VStack {
+                    Text(checkInTime)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.dark500)
+                    
+                    Text("Check In")
+                        .font(.system(size: 8, weight: .thin))
+                        .foregroundColor(.dark300)
+                }
                 
-                Text("Check In")
-                    .font(.system(size: 8, weight: .thin))
-                    .foregroundColor(.dark300)
-            }
-            
-            Rectangle()
-                .frame(width: 0.5, height: 23)
-                .background(Color.dark200)
-            
-            VStack {
-                Text(checkOutTime)
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.dark500)
+                Spacer()
                 
-                Text("Check Out")
-                    .font(.system(size: 8, weight: .thin))
-                    .foregroundColor(.dark300)
-            }
-            
-            Rectangle()
-                .frame(width: 0.5, height: 23)
-                .background(Color.dark200)
-            
-            VStack {
-                Text(totalHours)
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.dark500)
+                Rectangle()
+                    .frame(width: 0.5, height: 23)
+                    .background(Color.dark200)
                 
-                Text("Total Hours")
-                    .font(.system(size: 8, weight: .thin))
-                    .foregroundColor(.dark300)
+                Spacer()
+                
+                VStack {
+                    Text(checkOutTime)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.dark500)
+                    
+                    Text("Check Out")
+                        .font(.system(size: 8, weight: .thin))
+                        .foregroundColor(.dark300)
+                }
+                
+                Spacer()
+                
+                Rectangle()
+                    .frame(width: 0.5, height: 23)
+                    .background(Color.dark200)
+                
+                Spacer()
+                
+                VStack {
+                    Text(totalHours)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.dark500)
+                    
+                    Text("Total Hours")
+                        .font(.system(size: 8, weight: .thin))
+                        .foregroundColor(.dark300)
+                }
             }
-            Spacer()
+            .padding(.horizontal, 20)
         }
         .padding(8)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.white, lineWidth: 1)
         )
+        .padding(.horizontal, 8)
     }
 }
 

@@ -34,14 +34,14 @@ struct HomeView: View {
                                 
                                 Text("Nongsa Digital Park")
                                     .foregroundColor(.violet50)
-                                    .font(.system(size: 10))
+                                    .font(.system(size: 12))
                             }
                         }
                         .padding(.trailing, 15)
                     }
                     
                     HomeSummaryCardView(
-                        greetingMessage: "Good Morning🌞",
+                        greetingMessage: "Halo,",
                         name: "Nabila Putri Syafrina Bukka",
                         role: "Web Technical Mentor",
                         imageProfile: Image("img_profile"),
@@ -118,20 +118,12 @@ struct HomeView: View {
                     showAttendanceHistory = false
                 }
             }
-            .onChange(of: goToLiveAttendance) {
-                if goToLiveAttendance {
-                    navState.presentFullScreen(
-                        view: AnyView(
-                            LiveAttendanceView(
-                                timeNow: "09:00",
-                                dateNow: "Mon, 12 May 2024",
-                                buttonAction: {}
-                            )
-                        )
-                    )
-                    goToLiveAttendance = false
+            
+            .fullScreenCover(isPresented: $goToLiveAttendance, content: {
+                NavigationStack {
+                    LiveAttendanceView(buttonAction: {})
                 }
-            }
+            })
             .pageBackground()
         }
     }

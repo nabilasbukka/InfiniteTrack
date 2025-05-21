@@ -13,13 +13,20 @@ struct InfiniteTrackApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if navState.isShowingFullScreenView {
-                FullScreenRouterView()
-                    .environmentObject(navState)
-            } else {
-                MainTabView()
-                    .environmentObject(navState)
-            }
+//            if navState.isShowingFullScreenView {
+//                FullScreenRouterView()
+//                    .environmentObject(navState)
+//            } else {
+//                MainTabView()
+//                    .environmentObject(navState)
+//            }
+            
+            MainTabView()
+                .environmentObject(navState)
+                .onAppear{
+                    UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "chevron.left.square")
+                    UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left.square")
+                }
         }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct DashboardFeatureItemView: View {
     var imageName: String
     var title: String
+    var isLocked: Bool = false
     var onTap: (() -> Void)? = nil
     
     var body: some View {
@@ -31,8 +32,22 @@ struct DashboardFeatureItemView: View {
                 .stroke(Color.primary500.opacity(0.5), lineWidth: 1)
         )
         .contentShape(Rectangle())
+        .overlay(content: {
+            if isLocked {
+                ZStack(alignment: .topTrailing) {
+                    RoundedRectangle(cornerRadius: 12)
+                        .opacity(0.15)
+                    
+                    Image(systemName: "lock.fill")
+                        .foregroundColor(.violet900)
+                        .padding(4)
+                }
+            }
+        })
         .onTapGesture {
-            onTap?()
+            if !isLocked {
+                onTap?()
+            }
         }
     }
 }
