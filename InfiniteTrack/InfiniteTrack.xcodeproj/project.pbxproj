@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */; };
 		C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C905742F2DD451C10061EEF0 /* MainTabView.swift */; };
 		C90574322DD456650061EEF0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574312DD456650061EEF0 /* HomeView.swift */; };
 		C90574372DD481240061EEF0 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574362DD481240061EEF0 /* ContactView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceInfoItemView.swift; sourceTree = "<group>"; };
 		C905742F2DD451C10061EEF0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C90574312DD456650061EEF0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C90574362DD481240061EEF0 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */,
 				C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */,
 				C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */,
+				C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */,
 				C962BA6F2DDDC99C00DED8DA /* BackButtonViewModifier.swift in Sources */,
 				C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */,
+				C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */,
 				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
 				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,

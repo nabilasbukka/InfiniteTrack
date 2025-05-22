@@ -122,9 +122,87 @@ struct LiveAttendanceView: View {
         .frame(width: 327, height: 44)
     }
     
+    @ViewBuilder
+    func addNotesView() -> some View {
+        Text("Add Notes (Optional)")
+            .font(.system(size: 12, weight: .medium))
+            .foregroundColor(.dark500)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.top, 24)
+            .padding(.horizontal, 4)
+        
+        ZStack(alignment: .topLeading) {
+            if checkInNote.isEmpty {
+                Text("Write note")
+                    .foregroundColor(.gray)
+                    .padding(.vertical, 16)
+                    .padding(.horizontal, 16)
+            }
+            
+            TextEditor(text: $checkInNote)
+                .scrollContentBackground(.hidden)
+                .background(Color.clear)
+                .padding(12)
+                .frame(height: 125)
+                .frame(maxWidth: .infinity)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.white, lineWidth: 2)
+                )
+                .foregroundColor(.dark400)
+                .font(.system(size: 14))
+        }
+    }
+    
+    @ViewBuilder
+    func uploadImageView() -> some View {
+        if selected == .home {
+            Text("Upload Image")
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.dark500)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 24)
+                .padding(.horizontal, 4)
+            
+            Button(action: {
+                viewModel.openCamera()
+            }) {
+                ZStack {
+                    VStack(spacing: 8) {
+                        Image(systemName: "camera")
+                            .resizable()
+                            .frame(width: 49, height: 39)
+                            .foregroundColor(.primary500)
+                        
+                        Text("Tap to add your photo")
+                            .font(.system(size: 20, weight: .medium))
+                            .foregroundColor(.dark500)
+                        
+                        Text("Make sure your photo is clearly shows your face!")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.dark300)
+                    }
+                    .padding()
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.primary50)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+            )
+            .onTapGesture {
+                print("Camera view tapped")
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView {
-            VStack(alignment: .center, spacing: 8) {
+            VStack(alignment: .center, spacing: 16) {
                 segmentedView()
                 
                 Text(viewModel.currentTime)
@@ -137,77 +215,9 @@ struct LiveAttendanceView: View {
                 
                 scheduleSectionView()
                 
-                Text("Add Notes (Optional)")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(.dark500)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 24)
-                    .padding(.horizontal, 4)
+                addNotesView()
                 
-                ZStack(alignment: .topLeading) {
-                    if checkInNote.isEmpty {
-                        Text("Write note")
-                            .foregroundColor(.gray)
-                            .padding(.vertical, 16)
-                            .padding(.horizontal, 16)
-                    }
-                    
-                    TextEditor(text: $checkInNote)
-                        .scrollContentBackground(.hidden)
-                        .background(Color.clear)
-                        .padding(12)
-                        .frame(height: 125)
-                        .frame(maxWidth: .infinity)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.white, lineWidth: 2)
-                        )
-                        .foregroundColor(.dark400)
-                        .font(.system(size: 14))
-                }
-                
-                if selected == .home {
-                    Text("Upload Image")
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundColor(.dark500)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top, 24)
-                        .padding(.horizontal, 4)
-                    
-                    Button(action: {
-                        viewModel.openCamera()
-                    }) {
-                        ZStack {
-                            VStack(spacing: 8) {
-                                Image(systemName: "camera")
-                                    .resizable()
-                                    .frame(width: 49, height: 39)
-                                    .foregroundColor(.primary500)
-                                
-                                Text("Tap to add your photo")
-                                    .font(.system(size: 20, weight: .medium))
-                                    .foregroundColor(.dark500)
-                                
-                                Text("Make sure your photo is clearly shows your face!")
-                                    .font(.system(size: 12, weight: .medium))
-                                    .foregroundColor(.dark300)
-                            }
-                            .padding()
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.primary50)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.white, lineWidth: 2)
-                            )
-                    )
-                    .onTapGesture {
-                        print("Camera view tapped")
-                    }
-                }
+                uploadImageView()
                 
                 Spacer()
                 
