@@ -11,11 +11,7 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             VStack {
-                HStack {
-                    Text("nabila cantik bgt")
-                    
-                    Spacer()
-                }
+                InputOTPView()
             }
         }
         .pageBackground()

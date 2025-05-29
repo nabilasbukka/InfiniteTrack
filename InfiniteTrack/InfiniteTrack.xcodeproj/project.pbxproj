@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */; };
+		C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236C2DDF110C0073976D /* InputOTPView.swift */; };
+		C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236E2DDF14900073976D /* InputNewPasswordView.swift */; };
 		C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C905742F2DD451C10061EEF0 /* MainTabView.swift */; };
 		C90574322DD456650061EEF0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574312DD456650061EEF0 /* HomeView.swift */; };
 		C90574372DD481240061EEF0 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90574362DD481240061EEF0 /* ContactView.swift */; };
@@ -26,6 +28,9 @@
 		C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */; };
 		C97185D32DD5F3A2004A1F7A /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97185D22DD5F3A2004A1F7A /* SectionHeaderView.swift */; };
 		C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */; };
+		C98C09D72DE45A33000D6E8B /* ConfirmPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09D62DE45A33000D6E8B /* ConfirmPasswordField.swift */; };
+		C98C09D92DE462FF000D6E8B /* InputEmailField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09D82DE462FF000D6E8B /* InputEmailField.swift */; };
+		C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09DA2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift */; };
 		C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */; };
 		C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */; };
 		C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DECB2CA51293006F4B66 /* ContentView.swift */; };
@@ -35,11 +40,13 @@
 		C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */; };
 		C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495592DD722AC008A17A9 /* View+Extension.swift */; };
 		C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */; };
-		C9EA33CA2DDD8ECF00233FCC /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA33C92DDD8ECF00233FCC /* ResetPasswordView.swift */; };
+		C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA33C92DDD8ECF00233FCC /* ForgotPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceInfoItemView.swift; sourceTree = "<group>"; };
+		C904236C2DDF110C0073976D /* InputOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPView.swift; sourceTree = "<group>"; };
+		C904236E2DDF14900073976D /* InputNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNewPasswordView.swift; sourceTree = "<group>"; };
 		C905742F2DD451C10061EEF0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		C90574312DD456650061EEF0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C90574362DD481240061EEF0 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -58,6 +65,9 @@
 		C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenRouterView.swift; sourceTree = "<group>"; };
 		C97185D22DD5F3A2004A1F7A /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		C97185D42DD5F505004A1F7A /* TimeOffRequestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOffRequestCardView.swift; sourceTree = "<group>"; };
+		C98C09D62DE45A33000D6E8B /* ConfirmPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordField.swift; sourceTree = "<group>"; };
+		C98C09D82DE462FF000D6E8B /* InputEmailField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailField.swift; sourceTree = "<group>"; };
+		C98C09DA2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldRepresentable.swift; sourceTree = "<group>"; };
 		C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryView.swift; sourceTree = "<group>"; };
 		C9B8DEC62CA51293006F4B66 /* InfiniteTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteTrackApp.swift; sourceTree = "<group>"; };
@@ -68,7 +78,7 @@
 		C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundViewModifier.swift; sourceTree = "<group>"; };
 		C9E495592DD722AC008A17A9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRankCardView.swift; sourceTree = "<group>"; };
-		C9EA33C92DDD8ECF00233FCC /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		C9EA33C92DDD8ECF00233FCC /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C90423702DDF16650073976D /* Reset Password */ = {
+			isa = PBXGroup;
+			children = (
+				C9EA33C92DDD8ECF00233FCC /* ForgotPasswordView.swift */,
+				C904236E2DDF14900073976D /* InputNewPasswordView.swift */,
+				C904236C2DDF110C0073976D /* InputOTPView.swift */,
+				C98C09DA2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift */,
+			);
+			path = "Reset Password";
+			sourceTree = "<group>";
+		};
 		C90574332DD4566C0061EEF0 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +165,8 @@
 				C91B8AF52DDC68F4004C25BC /* PrimaryButton.swift */,
 				C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */,
 				C962BA6E2DDDC99C00DED8DA /* BackButtonViewModifier.swift */,
+				C98C09D62DE45A33000D6E8B /* ConfirmPasswordField.swift */,
+				C98C09D82DE462FF000D6E8B /* InputEmailField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -171,8 +194,8 @@
 		C91B8AF92DDC871F004C25BC /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C90423702DDF16650073976D /* Reset Password */,
 				C91B8AFA2DDC8748004C25BC /* LoginView.swift */,
-				C9EA33C92DDD8ECF00233FCC /* ResetPasswordView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -318,8 +341,10 @@
 			files = (
 				C97185D32DD5F3A2004A1F7A /* SectionHeaderView.swift in Sources */,
 				C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */,
+				C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */,
 				C90574932DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift in Sources */,
 				C905743B2DD481520061EEF0 /* MyLeaveView.swift in Sources */,
+				C98C09D72DE45A33000D6E8B /* ConfirmPasswordField.swift in Sources */,
 				C90574322DD456650061EEF0 /* HomeView.swift in Sources */,
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
 				C91B8AFB2DDC8748004C25BC /* LoginView.swift in Sources */,
@@ -327,6 +352,7 @@
 				C962BA6F2DDDC99C00DED8DA /* BackButtonViewModifier.swift in Sources */,
 				C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */,
 				C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */,
+				C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */,
 				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
 				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
@@ -334,13 +360,15 @@
 				C91B8AF62DDC68F4004C25BC /* PrimaryButton.swift in Sources */,
 				C90574392DD481390061EEF0 /* ProfileView.swift in Sources */,
 				C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */,
+				C98C09D92DE462FF000D6E8B /* InputEmailField.swift in Sources */,
 				C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */,
+				C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */,
 				C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */,
 				C91B8AF82DDC796C004C25BC /* LiveAttendanceViewModel.swift in Sources */,
 				C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */,
 				C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */,
 				C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */,
-				C9EA33CA2DDD8ECF00233FCC /* ResetPasswordView.swift in Sources */,
+				C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */,
 				C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */,
 				C96373D32DDAF0A000807E47 /* CompleteProfileInfoView.swift in Sources */,
 			);
