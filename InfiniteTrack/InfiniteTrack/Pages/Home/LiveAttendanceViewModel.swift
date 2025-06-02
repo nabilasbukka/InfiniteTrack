@@ -27,13 +27,8 @@ class LiveAttendanceViewModel: ObservableObject {
     }
     
     private func updateTime() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        currentTime = formatter.string(from: Date())
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE, dd MMM yyyy"
-        currentDate = dateFormatter.string(from: Date())
+        currentTime = Date().toString(format: "HH:mm")
+        currentDate = Date().toString(format: "EEE, dd MMM yyyy")
     }
     
     deinit {

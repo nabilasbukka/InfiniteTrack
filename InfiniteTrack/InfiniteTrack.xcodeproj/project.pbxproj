@@ -31,11 +31,23 @@
 		C98C09D72DE45A33000D6E8B /* ConfirmPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09D62DE45A33000D6E8B /* ConfirmPasswordField.swift */; };
 		C98C09D92DE462FF000D6E8B /* InputEmailField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09D82DE462FF000D6E8B /* InputEmailField.swift */; };
 		C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09DA2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift */; };
+		C98C09DE2DE8CB99000D6E8B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09DD2DE8CB99000D6E8B /* LocationManager.swift */; };
+		C98C09E02DE8CC70000D6E8B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09DF2DE8CC70000D6E8B /* HomeViewModel.swift */; };
+		C98C09E22DE8D715000D6E8B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09E12DE8D715000D6E8B /* Date+Extension.swift */; };
+		C98C09E52DE96D2F000D6E8B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C98C09E42DE96D2F000D6E8B /* Alamofire */; };
+		C98C09E72DE96D69000D6E8B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09E62DE96D69000D6E8B /* ApiManager.swift */; };
 		C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */; };
 		C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */; };
 		C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8DECB2CA51293006F4B66 /* ContentView.swift */; };
 		C9B8DECE2CA51294006F4B66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B8DECD2CA51294006F4B66 /* Assets.xcassets */; };
 		C9B8DED12CA51294006F4B66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B8DED02CA51294006F4B66 /* Preview Assets.xcassets */; };
+		C9CB06F32DED535000479F2C /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06F22DED535000479F2C /* LoginResponse.swift */; };
+		C9CB06F52DED53C500479F2C /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06F42DED53C500479F2C /* UserApi.swift */; };
+		C9CB06F72DED54BD00479F2C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06F62DED54BD00479F2C /* LoginViewModel.swift */; };
+		C9CB06F92DED56FD00479F2C /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06F82DED56FD00479F2C /* Collection+Extension.swift */; };
+		C9CB06FB2DED5E5C00479F2C /* BasicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06FA2DED5E5C00479F2C /* BasicResponse.swift */; };
+		C9CB06FD2DED66CF00479F2C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06FC2DED66CF00479F2C /* UserDefaultsManager.swift */; };
+		C9CB07002DEDBFD900479F2C /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB06FF2DEDBFD500479F2C /* UserDetail.swift */; };
 		C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */; };
 		C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */; };
 		C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495592DD722AC008A17A9 /* View+Extension.swift */; };
@@ -68,12 +80,24 @@
 		C98C09D62DE45A33000D6E8B /* ConfirmPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordField.swift; sourceTree = "<group>"; };
 		C98C09D82DE462FF000D6E8B /* InputEmailField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailField.swift; sourceTree = "<group>"; };
 		C98C09DA2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldRepresentable.swift; sourceTree = "<group>"; };
+		C98C09DC2DE8CAB6000D6E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C98C09DD2DE8CB99000D6E8B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C98C09DF2DE8CC70000D6E8B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C98C09E12DE8D715000D6E8B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		C98C09E62DE96D69000D6E8B /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryView.swift; sourceTree = "<group>"; };
 		C9B8DEC62CA51293006F4B66 /* InfiniteTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B8DEC92CA51293006F4B66 /* InfiniteTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteTrackApp.swift; sourceTree = "<group>"; };
 		C9B8DECB2CA51293006F4B66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C9B8DECD2CA51294006F4B66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B8DED02CA51294006F4B66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9CB06F22DED535000479F2C /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		C9CB06F42DED53C500479F2C /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		C9CB06F62DED54BD00479F2C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C9CB06F82DED56FD00479F2C /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		C9CB06FA2DED5E5C00479F2C /* BasicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponse.swift; sourceTree = "<group>"; };
+		C9CB06FC2DED66CF00479F2C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		C9CB06FF2DEDBFD500479F2C /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryCardItemView.swift; sourceTree = "<group>"; };
 		C9E495572DD721E0008A17A9 /* PageBackgroundViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundViewModifier.swift; sourceTree = "<group>"; };
 		C9E495592DD722AC008A17A9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -86,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98C09E52DE96D2F000D6E8B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +155,11 @@
 		C905748C2DD491970061EEF0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C9CB06FE2DEDBFCF00479F2C /* Model */,
 				C905748D2DD491BB0061EEF0 /* Extensions */,
+				C98C09DD2DE8CB99000D6E8B /* LocationManager.swift */,
+				C98C09E62DE96D69000D6E8B /* ApiManager.swift */,
+				C9CB06FC2DED66CF00479F2C /* UserDefaultsManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -140,6 +169,8 @@
 			children = (
 				C905748E2DD491FD0061EEF0 /* Color+Extension.swift */,
 				C9E495592DD722AC008A17A9 /* View+Extension.swift */,
+				C98C09E12DE8D715000D6E8B /* Date+Extension.swift */,
+				C9CB06F82DED56FD00479F2C /* Collection+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -182,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				C90574312DD456650061EEF0 /* HomeView.swift */,
+				C98C09DF2DE8CC70000D6E8B /* HomeViewModel.swift */,
 				C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */,
 				C96373D82DDB2AD000807E47 /* NavigationState.swift */,
 				C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */,
@@ -196,6 +228,7 @@
 			children = (
 				C90423702DDF16650073976D /* Reset Password */,
 				C91B8AFA2DDC8748004C25BC /* LoginView.swift */,
+				C9CB06F62DED54BD00479F2C /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -227,6 +260,8 @@
 		C9B8DEC82CA51293006F4B66 /* InfiniteTrack */ = {
 			isa = PBXGroup;
 			children = (
+				C9CB06F02DED533700479F2C /* Services */,
+				C98C09DC2DE8CAB6000D6E8B /* Info.plist */,
 				C905748C2DD491970061EEF0 /* Core */,
 				C91B6FA72DCE02B7005CF46A /* Base */,
 				C91B6FA62DCE02B1005CF46A /* Components */,
@@ -245,6 +280,32 @@
 				C9B8DED02CA51294006F4B66 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9CB06F02DED533700479F2C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9CB06F12DED534200479F2C /* Responses */,
+				C9CB06F42DED53C500479F2C /* UserApi.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9CB06F12DED534200479F2C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C9CB06F22DED535000479F2C /* LoginResponse.swift */,
+				C9CB06FA2DED5E5C00479F2C /* BasicResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		C9CB06FE2DEDBFCF00479F2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9CB06FF2DEDBFD500479F2C /* UserDetail.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C9E4955D2DD74251008A17A9 /* TabBar */ = {
@@ -313,6 +374,9 @@
 				Base,
 			);
 			mainGroup = C9B8DEBD2CA51293006F4B66;
+			packageReferences = (
+				C98C09E32DE96D2F000D6E8B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C9B8DEC72CA51293006F4B66 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,12 +404,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97185D32DD5F3A2004A1F7A /* SectionHeaderView.swift in Sources */,
+				C9CB06F32DED535000479F2C /* LoginResponse.swift in Sources */,
 				C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */,
 				C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */,
 				C90574932DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift in Sources */,
 				C905743B2DD481520061EEF0 /* MyLeaveView.swift in Sources */,
 				C98C09D72DE45A33000D6E8B /* ConfirmPasswordField.swift in Sources */,
 				C90574322DD456650061EEF0 /* HomeView.swift in Sources */,
+				C9CB06F72DED54BD00479F2C /* LoginViewModel.swift in Sources */,
+				C9CB06F92DED56FD00479F2C /* Collection+Extension.swift in Sources */,
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
 				C91B8AFB2DDC8748004C25BC /* LoginView.swift in Sources */,
 				C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */,
@@ -353,8 +420,10 @@
 				C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */,
 				C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */,
 				C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */,
+				C98C09DE2DE8CB99000D6E8B /* LocationManager.swift in Sources */,
 				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
 				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
+				C98C09E02DE8CC70000D6E8B /* HomeViewModel.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
 				C90574372DD481240061EEF0 /* ContactView.swift in Sources */,
 				C91B8AF62DDC68F4004C25BC /* PrimaryButton.swift in Sources */,
@@ -362,15 +431,21 @@
 				C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */,
 				C98C09D92DE462FF000D6E8B /* InputEmailField.swift in Sources */,
 				C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */,
+				C98C09E22DE8D715000D6E8B /* Date+Extension.swift in Sources */,
 				C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */,
+				C9CB07002DEDBFD900479F2C /* UserDetail.swift in Sources */,
 				C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */,
+				C9CB06FB2DED5E5C00479F2C /* BasicResponse.swift in Sources */,
+				C98C09E72DE96D69000D6E8B /* ApiManager.swift in Sources */,
 				C91B8AF82DDC796C004C25BC /* LiveAttendanceViewModel.swift in Sources */,
 				C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */,
 				C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */,
 				C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */,
 				C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */,
+				C9CB06FD2DED66CF00479F2C /* UserDefaultsManager.swift in Sources */,
 				C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */,
 				C96373D32DDAF0A000807E47 /* CompleteProfileInfoView.swift in Sources */,
+				C9CB06F52DED53C500479F2C /* UserApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +582,7 @@
 				DEVELOPMENT_TEAM = DFF5WS246X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InfiniteTrack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -537,6 +613,7 @@
 				DEVELOPMENT_TEAM = DFF5WS246X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InfiniteTrack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C98C09E32DE96D2F000D6E8B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C98C09E42DE96D2F000D6E8B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C98C09E32DE96D2F000D6E8B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9B8DEBE2CA51293006F4B66 /* Project object */;
 }

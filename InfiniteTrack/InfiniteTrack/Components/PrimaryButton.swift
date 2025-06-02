@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PrimaryButton: View {
+    @Environment(\.isEnabled) private var isEnabled: Bool
     let title: String
     let action: () -> Void
 
@@ -21,6 +22,20 @@ struct PrimaryButton: View {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.primary500)
                 )
+                .opacity(isEnabled ? 1.0 : 0.5)
         }
+    }
+}
+
+struct PrimaryButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 16, weight: .medium))
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity, minHeight: 50)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.primary500)
+            )
     }
 }

@@ -17,6 +17,8 @@ struct ConfirmPasswordField: View {
         HStack {
             
             Image(systemName: "lock.fill")
+                .scaledToFit()
+                .frame(width: 16, height: 16)
                 .foregroundColor(.dark200)
             
             Group {

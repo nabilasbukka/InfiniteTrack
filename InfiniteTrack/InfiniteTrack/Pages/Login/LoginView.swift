@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @Binding var isLoginSuccess: Bool
+    @ObservedObject var viewModel: LoginViewModel = .init()
     
     @ViewBuilder
     func bannerLoginView() -> some View {
@@ -35,18 +34,18 @@ struct LoginView: View {
     
     @ViewBuilder
     func inputEmailPasswordView() -> some View {
-        InputEmailField(email: $email)
+        InputEmailField(email: $viewModel.email)
         
-        ConfirmPasswordField(password: $password)
+        ConfirmPasswordField(password: $viewModel.password)
     }
     
     @ViewBuilder
-    func wrongPasswordMsgError() -> some View {
+    func wrongPasswordMsgError(message: String = "Wrong password. Try again or click Forget password to reset.") -> some View {
         HStack(spacing: 4) {
             Image(systemName: "exclamationmark.circle")
                 .foregroundColor(.red)
             
-            Text("Wrong password. Try again or click Forgot password to reset.")
+            Text(message)
                 .foregroundColor(.red)
                 .font(.system(size: 10))
                 .fontWeight(.medium)
@@ -64,7 +63,10 @@ struct LoginView: View {
         .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.top, 4)
         
-        PrimaryButton(title: "Sign In", action: {})
+        PrimaryButton(title: "Sign In", action: {
+            viewModel.onClickLogin()
+        })
+            .disabled(!viewModel.isButtonLoginEnabled)
             .padding(.top, 16)
         
         Spacer()
@@ -76,16 +78,22 @@ struct LoginView: View {
             
             inputEmailPasswordView()
             
-            wrongPasswordMsgError()
+            if viewModel.errorMessage.isNotEmpty {
+                wrongPasswordMsgError(message: viewModel.errorMessage)
+            }
             
             forgotPasswordBtn()
 
         }
         .padding(16)
         .pageBackground()
+        .onChange(of: viewModel.isLoginSuccess) {
+            isLoginSuccess = viewModel.isLoginSuccess
+        }
     }
 }
 
 #Preview {
-    LoginView()
+    @Previewable @State var isLoginSuccess: Bool = false
+    LoginView(isLoginSuccess: $isLoginSuccess)
 }

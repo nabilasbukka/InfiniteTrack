@@ -10,12 +10,13 @@ import SwiftUI
 struct HomeView: View {
     @State private var showAttendanceHistory = false
     @State private var goToLiveAttendance = false
+    @StateObject private var viewModel = HomeViewModel()
     @EnvironmentObject var navState: NavigationState
     
     @ViewBuilder
     func navigationView() -> some View {
         HStack {
-            Text("Monday, 09 September 2024")
+            Text(viewModel.currentDate)
                 .foregroundColor(.dark500)
                 .font(.system(size: 12))
                 .padding(.leading, 15)
@@ -30,9 +31,10 @@ struct HomeView: View {
                 HStack {
                     Image(.icPinLocation)
                     
-                    Text("Nongsa Digital Park")
+                    Text(viewModel.locationName)
                         .foregroundColor(.violet50)
                         .font(.system(size: 12))
+                        .lineLimit(1)
                 }
             }
             .padding(.trailing, 15)
@@ -83,7 +85,7 @@ struct HomeView: View {
     }
     
     @ViewBuilder
-    func attendanceHistoryEmployeeView() -> some View {
+    func attendanceHistoryView() -> some View {
         SectionHeaderView(
             title: "Attandance History",
             showMoreAction: {
@@ -121,9 +123,9 @@ struct HomeView: View {
                         .foregroundColor(.dark300)
                         .font(.system(size: 12))
                 }
-
+                
                 Spacer()
-
+                
                 Image("img_profile")
                     .resizable()
                     .frame(width: 34, height: 34)
@@ -150,22 +152,23 @@ struct HomeView: View {
             ScrollView {
                 VStack {
                     navigationView()
+                    if let userResponse = viewModel.userResponse {
+                        HomeSummaryCardView(
+                            greetingMessage: "Halo,",
+                            name: userResponse.name ?? "",
+                            role: "Web Technical Mentor",
+                            imageProfile: Image("img_profile"),
+                            availableLeaveCount: "8",
+                            leaveUsedCount: "2") {
+                                goToLiveAttendance = true
+                            }
+                    }
                     
-                    HomeSummaryCardView(
-                        greetingMessage: "Halo,",
-                        name: "Nabila Putri Syafrina Bukka",
-                        role: "Web Technical Mentor",
-                        imageProfile: Image("img_profile"),
-                        availableLeaveCount: "8",
-                        leaveUsedCount: "2") {
-                            goToLiveAttendance = true
-                        }
-                    
-//                    homeSummaryCardInternView()
+                    //                    homeSummaryCardInternView()
                     
                     rankAttendanceEmployeeView()
-                    
-                    attendanceHistoryEmployeeView()
+                    //
+                    attendanceHistoryView()
                 }
             }
             .onChange(of: showAttendanceHistory) {
@@ -181,6 +184,9 @@ struct HomeView: View {
                 }
             })
             .pageBackground()
+            .onAppear {
+                viewModel.onAppear()
+            }
         }
     }
 }

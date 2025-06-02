@@ -14,6 +14,8 @@ struct InputEmailField: View {
         HStack {
             
             Image(systemName: "envelope")
+                .scaledToFit()
+                .frame(width: 16, height: 16)
                 .foregroundColor(.dark200)
 
             TextField("Enter your Email", text: $email)
