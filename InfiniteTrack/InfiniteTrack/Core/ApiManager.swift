@@ -17,8 +17,14 @@ final class ApiManager {
         
         let encoding: ParameterEncoding = method == .get ? URLEncoding.default : JSONEncoding.default
         
+        var headers: HTTPHeaders = []
+        
+        if let token: String = UserDefaultsManager.shared.get(key: .token) {
+            headers["Authorization"] = "Bearer \(token)"
+        }
+        
         return try await withCheckedThrowingContinuation { continuation in
-            AF.request(url, method: method, parameters: parameters, encoding: encoding)
+            AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
                 .validate({ request, response, data in
                     if response.statusCode >= 400, let data {
                         do {
@@ -42,6 +48,7 @@ final class ApiManager {
                 }
         }
     }
+
 }
 
 struct UserResponse: Codable {

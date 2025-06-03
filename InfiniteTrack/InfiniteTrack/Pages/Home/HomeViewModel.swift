@@ -13,9 +13,10 @@ final class HomeViewModel: ObservableObject {
     
     @Published var locationName: String = "Loading..."
     @Published var currentDate: String = ""
-    @Published var userResponse: UserResponse?
+//    @Published var userResponse: UserResponse?
     
-    private let userDetail: UserDetail? = UserApi.shared.getUserDetail()
+//    private var userDetail: UserDetail? = UserApi.shared.getUserDetail()
+    @Published var userDetail: UserDetail?
     
     init() {
         observeUserLocation()
@@ -36,20 +37,22 @@ final class HomeViewModel: ObservableObject {
     }
     
     private func getUserDetail() {
-        if let userDetail = userDetail {
-            guard let userId = userDetail.userId else { return }
-            
-            Task {
-                do {
-                    let response: UserResponse = try await ApiManager.shared.request(endpoint: "/users/get/\(userId)")
-                    await MainActor.run {
-                        self.userResponse = response
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }
+//        if let userDetail = userDetail {
+//            guard let userId = userDetail.userId else { return }
+//            
+//            Task {
+//                do {
+//                    let response: UserResponse = try await ApiManager.shared.request(endpoint: "/users/get/\(userId)")
+//                    await MainActor.run {
+//                        self.userResponse = response
+//                    }
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
+        
+        self.userDetail = UserApi.shared.getUserDetail()
     }
     
     private func observeUserLocation() {

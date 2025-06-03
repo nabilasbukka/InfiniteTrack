@@ -30,6 +30,7 @@ final class LoginViewModel: ObservableObject {
     
     private func handleSuccessLogin(response: LoginResponse) async {
         UserDefaultsManager.shared.set(encodable: response, key: .user)
+        UserDefaultsManager.shared.set(encodable: response.token, key: .token)
         await MainActor.run {
             isLoginSuccess = true
         }

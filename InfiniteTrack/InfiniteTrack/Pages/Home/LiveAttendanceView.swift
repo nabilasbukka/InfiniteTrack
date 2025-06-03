@@ -7,16 +7,19 @@
 
 import SwiftUI
 
+enum AttendanceType: String, Codable {
+    case office = "Work From Office"
+    case home = "Work From Home"
+}
+
+enum AttendanceAction: String {
+    case checkIn = "checkin"
+    case checkOut = "checkout"
+}
+
 struct LiveAttendanceView: View {
-    let buttonAction: () -> Void
     @Environment(\.presentationMode) var presentationMode
-    @State private var selected: AttendanceType = .office
-    @State private var checkInNote: String = ""
     @StateObject private var viewModel = LiveAttendanceViewModel()
-    enum AttendanceType {
-        case office
-        case home
-    }
     
     @ViewBuilder
     func scheduleSectionView() -> some View {
@@ -52,20 +55,20 @@ struct LiveAttendanceView: View {
                     HStack {
                         HStack {
                             Image(systemName: "arrow.down.left.circle.fill")
-                                .foregroundColor(.primary500)
+                                .foregroundColor(viewModel.attendanceAction == .checkIn ? .primary500 : .dark300)
                             
                             Text("Check In")
                                 .font(.system(size: 14, weight: .medium))
-                                .foregroundColor(.primary400)
+                                .foregroundColor(viewModel.attendanceAction == .checkIn ? .primary500 : .dark300)
                         }
                         
                         HStack {
                             Image(systemName: "arrow.up.right.circle.fill")
-                                .foregroundColor(.dark300)
+                                .foregroundColor(viewModel.attendanceAction == .checkOut ? .primary500 : .dark300)
                             
                             Text("Check Out")
                                 .font(.system(size: 14, weight: .medium))
-                                .foregroundColor(.dark300)
+                                .foregroundColor(viewModel.attendanceAction == .checkOut ? .primary500 : .dark300)
                         }
                     }
                 }
@@ -77,34 +80,34 @@ struct LiveAttendanceView: View {
     func segmentedView() -> some View {
         HStack(spacing: 0) {
             Button(action: {
-                selected = .office
+                viewModel.attendanceType = .office
             }) {
                 HStack(spacing: 8) {
                     Image("ic_office")
                     Text("Work From Office")
                         .font(.system(size: 14, weight: .semibold))
                 }
-                .foregroundColor(selected == .office ? .white : .primary500)
+                .foregroundColor(viewModel.attendanceType == .office ? .white : .primary500)
                 .frame(width: 180, height: 44)
                 .background(
-                    selected == .office ?
+                    viewModel.attendanceType == .office ?
                     Color.primary500 : Color.clear
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             }
             
             Button(action: {
-                selected = .home
+                viewModel.attendanceType = .home
             }) {
                 HStack(spacing: 8) {
                     Image("ic_home")
                     Text("Work From Home")
                         .font(.system(size: 14, weight: .semibold))
                 }
-                .foregroundColor(selected == .home ? .white : .primary500)
+                .foregroundColor(viewModel.attendanceType == .home ? .white : .primary500)
                 .frame(width: 180, height: 44)
                 .background(
-                    selected == .home ?
+                    viewModel.attendanceType == .home ?
                     Color.primary500 : Color.clear
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -132,14 +135,14 @@ struct LiveAttendanceView: View {
             .padding(.horizontal, 4)
         
         ZStack(alignment: .topLeading) {
-            if checkInNote.isEmpty {
+            if viewModel.notes.isEmpty {
                 Text("Write note")
                     .foregroundColor(.gray)
                     .padding(.vertical, 16)
                     .padding(.horizontal, 16)
             }
             
-            TextEditor(text: $checkInNote)
+            TextEditor(text: $viewModel.notes)
                 .scrollContentBackground(.hidden)
                 .background(Color.clear)
                 .padding(12)
@@ -156,7 +159,7 @@ struct LiveAttendanceView: View {
     
     @ViewBuilder
     func uploadImageView() -> some View {
-        if selected == .home {
+        if viewModel.attendanceType == .home {
             Text("Upload Image")
                 .font(.system(size: 12, weight: .medium))
                 .foregroundColor(.dark500)
@@ -221,7 +224,9 @@ struct LiveAttendanceView: View {
                 
                 Spacer()
                 
-                PrimaryButton(title: "Send", action: buttonAction)
+                PrimaryButton(title: "Send", action: {
+                    viewModel.submitAttendance()
+                })
             }
             .padding(12)
         }
@@ -237,10 +242,13 @@ struct LiveAttendanceView: View {
             .ignoresSafeArea()
         )
         .pageBackground()
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
     
 }
 
 #Preview {
-    LiveAttendanceView(buttonAction: {})
+    LiveAttendanceView()
 }

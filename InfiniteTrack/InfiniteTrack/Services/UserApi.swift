@@ -23,6 +23,4 @@ final class UserApi {
         let userDetail: UserDetail? = UserDefaultsManager.shared.get(key: .user)
         return userDetail
     }
-    
-    
 }

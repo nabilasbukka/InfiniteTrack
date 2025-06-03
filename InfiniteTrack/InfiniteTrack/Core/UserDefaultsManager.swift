@@ -9,6 +9,7 @@ import Foundation
 
 enum UserDefaultsKey: String {
     case user
+    case token
 }
 
 final class UserDefaultsManager {

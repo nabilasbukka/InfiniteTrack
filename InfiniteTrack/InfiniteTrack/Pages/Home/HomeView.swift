@@ -152,11 +152,11 @@ struct HomeView: View {
             ScrollView {
                 VStack {
                     navigationView()
-                    if let userResponse = viewModel.userResponse {
+                    if let userDetail = viewModel.userDetail {
                         HomeSummaryCardView(
                             greetingMessage: "Halo,",
-                            name: userResponse.name ?? "",
-                            role: "Web Technical Mentor",
+                            name: userDetail.userName ?? "-",
+                            role: userDetail.positionName ?? "-",
                             imageProfile: Image("img_profile"),
                             availableLeaveCount: "8",
                             leaveUsedCount: "2") {
@@ -180,7 +180,7 @@ struct HomeView: View {
             
             .fullScreenCover(isPresented: $goToLiveAttendance, content: {
                 NavigationStack {
-                    LiveAttendanceView(buttonAction: {})
+                    LiveAttendanceView()
                 }
             })
             .pageBackground()
