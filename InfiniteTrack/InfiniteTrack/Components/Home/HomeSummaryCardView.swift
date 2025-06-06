@@ -40,27 +40,27 @@ struct HomeSummaryCardView: View {
             }
             
             // will available soon
-//            VStack(alignment: .leading) {
-//                Text("Available Leave Days")
-//                    .foregroundColor(.black)
-//                    .font(.system(size: 10))
-//                    .fontWeight(.thin)
-//                Text("\(availableLeaveCount) Days")
-//                    .foregroundColor(.dark500)
-//                    .font(.system(size: 20))
-//                Text("\(leaveUsedCount) Used of 10")
-//                    .foregroundColor(.black)
-//                    .font(.system(size: 11))
-//                    .fontWeight(.thin)
-//                
-//                ProgressView(value: 0.8)
-//                    .progressViewStyle(LinearProgressViewStyle())
-//                    .accentColor(.primary500)
-//                    .frame(height: 8)
-//                    .background(Color.gray.opacity(0.3))
-//                    .cornerRadius(4)
-//            }
-//            .padding(.top, 12)
+            //            VStack(alignment: .leading) {
+            //                Text("Available Leave Days")
+            //                    .foregroundColor(.black)
+            //                    .font(.system(size: 10))
+            //                    .fontWeight(.thin)
+            //                Text("\(availableLeaveCount) Days")
+            //                    .foregroundColor(.dark500)
+            //                    .font(.system(size: 20))
+            //                Text("\(leaveUsedCount) Used of 10")
+            //                    .foregroundColor(.black)
+            //                    .font(.system(size: 11))
+            //                    .fontWeight(.thin)
+            //
+            //                ProgressView(value: 0.8)
+            //                    .progressViewStyle(LinearProgressViewStyle())
+            //                    .accentColor(.primary500)
+            //                    .frame(height: 8)
+            //                    .background(Color.gray.opacity(0.3))
+            //                    .cornerRadius(4)
+            //            }
+            //            .padding(.top, 12)
             
             HStack(spacing: 87) {
                 DashboardFeatureItemView(
@@ -79,10 +79,11 @@ struct HomeSummaryCardView: View {
             .padding(.top, 11)
         }
         .padding(10)
-        
         .background(
             RoundedRectangle(cornerRadius: 12)
+                .fill(Color.white.opacity(0.5))
                 .stroke(Color.white.opacity(0.5), lineWidth: 1)
+                .shadow(color: Color.primary500.opacity(0.3), radius: 8, x: 0, y: 4)
         )
         .padding(.horizontal, 10)
     }

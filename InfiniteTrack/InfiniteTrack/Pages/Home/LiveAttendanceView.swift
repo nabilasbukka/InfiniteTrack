@@ -160,46 +160,44 @@ struct LiveAttendanceView: View {
     @ViewBuilder
     func uploadImageView() -> some View {
         if viewModel.attendanceType == .home {
-            Text("Upload Image")
-                .font(.system(size: 12, weight: .medium))
-                .foregroundColor(.dark500)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 24)
-                .padding(.horizontal, 4)
-            
-            Button(action: {
-                viewModel.openCamera()
-            }) {
-                ZStack {
+            if let image = viewModel.capturedImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 200)
+                    .cornerRadius(10)
+                    .padding(.top, 12)
+            } else {
+                Button(action: {
+                    viewModel.openCamera()
+                }) {
                     VStack(spacing: 8) {
                         Image(systemName: "camera")
                             .resizable()
                             .frame(width: 49, height: 39)
                             .foregroundColor(.primary500)
-                        
+
                         Text("Tap to add your photo")
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(.dark500)
-                        
-                        Text("Make sure your photo is clearly shows your face!")
+
+                        Text("Make sure your photo clearly shows your face!")
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.dark300)
                     }
                     .padding()
                 }
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.primary50)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 2)
+                        )
+                )
             }
-            .frame(maxWidth: .infinity)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.primary50)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.white, lineWidth: 2)
-                    )
-            )
-            .onTapGesture {
-                print("Camera view tapped")
-            }
+
         }
     }
     
@@ -244,6 +242,11 @@ struct LiveAttendanceView: View {
         .pageBackground()
         .onAppear {
             viewModel.onAppear()
+        }
+        .sheet(isPresented: $viewModel.isShowingCamera) {
+            ImagePicker(sourceType: .camera) { image in
+                viewModel.setImage(image)
+            }
         }
     }
     

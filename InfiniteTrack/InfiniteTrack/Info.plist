@@ -2,7 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We need your location to show your attendance location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to show your attendance location.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to access your photo to complete your attendance.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to access your photo to complete your attendance.</string>
 </dict>
 </plist>

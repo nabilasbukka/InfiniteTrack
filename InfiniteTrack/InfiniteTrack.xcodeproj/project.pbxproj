@@ -37,6 +37,13 @@
 		C98C09E52DE96D2F000D6E8B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C98C09E42DE96D2F000D6E8B /* Alamofire */; };
 		C98C09E72DE96D69000D6E8B /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C09E62DE96D69000D6E8B /* ApiManager.swift */; };
 		C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */; };
+		C9AACBE82DEFFBD600D0F99D /* AttendanceHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBE72DEFFBD600D0F99D /* AttendanceHistoryViewModel.swift */; };
+		C9AACBEA2DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBE92DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift */; };
+		C9AACBEC2DF031EA00D0F99D /* FilterAttendanceDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBEB2DF031EA00D0F99D /* FilterAttendanceDateView.swift */; };
+		C9AACBEE2DF032F400D0F99D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBED2DF032F400D0F99D /* CalendarView.swift */; };
+		C9AACBF22DF0517800D0F99D /* CheckInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBF12DF0517800D0F99D /* CheckInRequest.swift */; };
+		C9AACBF62DF1703700D0F99D /* AttendanceSummaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBF52DF1703700D0F99D /* AttendanceSummaryItem.swift */; };
+		C9AACBF82DF17C3600D0F99D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBF72DF17C3600D0F99D /* ImagePicker.swift */; };
 		C9B861D82DEEA030001DE2B5 /* CheckinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B861D72DEEA030001DE2B5 /* CheckinResponse.swift */; };
 		C9B861DA2DEEB35C001DE2B5 /* AttendanceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B861D92DEEB35C001DE2B5 /* AttendanceApi.swift */; };
 		C9B861DC2DEEB6C8001DE2B5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B861DB2DEEB6C8001DE2B5 /* Encodable+Extension.swift */; };
@@ -91,6 +98,13 @@
 		C98C09E12DE8D715000D6E8B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		C98C09E62DE96D69000D6E8B /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryView.swift; sourceTree = "<group>"; };
+		C9AACBE72DEFFBD600D0F99D /* AttendanceHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryViewModel.swift; sourceTree = "<group>"; };
+		C9AACBE92DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryDisplayModel.swift; sourceTree = "<group>"; };
+		C9AACBEB2DF031EA00D0F99D /* FilterAttendanceDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAttendanceDateView.swift; sourceTree = "<group>"; };
+		C9AACBED2DF032F400D0F99D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		C9AACBF12DF0517800D0F99D /* CheckInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInRequest.swift; sourceTree = "<group>"; };
+		C9AACBF52DF1703700D0F99D /* AttendanceSummaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceSummaryItem.swift; sourceTree = "<group>"; };
+		C9AACBF72DF17C3600D0F99D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C9B861D72DEEA030001DE2B5 /* CheckinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinResponse.swift; sourceTree = "<group>"; };
 		C9B861D92DEEB35C001DE2B5 /* AttendanceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceApi.swift; sourceTree = "<group>"; };
 		C9B861DB2DEEB6C8001DE2B5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
@@ -190,6 +204,7 @@
 		C91B6FA52DCE02A0005CF46A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				C9AACBF42DF13B0E00D0F99D /* MyAttendance */,
 				C91B8AF92DDC871F004C25BC /* Login */,
 				C90574352DD456860061EEF0 /* MyLeave */,
 				C90574342DD4567B0061EEF0 /* Profile */,
@@ -210,6 +225,8 @@
 				C962BA6E2DDDC99C00DED8DA /* BackButtonViewModifier.swift */,
 				C98C09D62DE45A33000D6E8B /* ConfirmPasswordField.swift */,
 				C98C09D82DE462FF000D6E8B /* InputEmailField.swift */,
+				C9AACBF52DF1703700D0F99D /* AttendanceSummaryItem.swift */,
+				C9AACBF72DF17C3600D0F99D /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -226,7 +243,6 @@
 			children = (
 				C90574312DD456650061EEF0 /* HomeView.swift */,
 				C98C09DF2DE8CC70000D6E8B /* HomeViewModel.swift */,
-				C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */,
 				C96373D82DDB2AD000807E47 /* NavigationState.swift */,
 				C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */,
 				C96373D42DDB106000807E47 /* LiveAttendanceView.swift */,
@@ -251,6 +267,40 @@
 				C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */,
 			);
 			path = PopUpInformation;
+			sourceTree = "<group>";
+		};
+		C9AACBEF2DF04C7100D0F99D /* AttendanceHistory */ = {
+			isa = PBXGroup;
+			children = (
+				C9AACBF02DF04C9000D0F99D /* Models */,
+				C98EA7C42DDA05F300B29EE3 /* AttendanceHistoryView.swift */,
+				C9AACBE72DEFFBD600D0F99D /* AttendanceHistoryViewModel.swift */,
+			);
+			path = AttendanceHistory;
+			sourceTree = "<group>";
+		};
+		C9AACBF02DF04C9000D0F99D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9AACBE92DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9AACBF32DF0518100D0F99D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C9AACBF12DF0517800D0F99D /* CheckInRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C9AACBF42DF13B0E00D0F99D /* MyAttendance */ = {
+			isa = PBXGroup;
+			children = (
+				C9AACBEF2DF04C7100D0F99D /* AttendanceHistory */,
+			);
+			path = MyAttendance;
 			sourceTree = "<group>";
 		};
 		C9B8DEBD2CA51293006F4B66 = {
@@ -297,6 +347,7 @@
 		C9CB06F02DED533700479F2C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C9AACBF32DF0518100D0F99D /* Requests */,
 				C9CB06F12DED534200479F2C /* Responses */,
 				C9CB06F42DED53C500479F2C /* UserApi.swift */,
 				C9B861D92DEEB35C001DE2B5 /* AttendanceApi.swift */,
@@ -341,6 +392,8 @@
 				C9E495552DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift */,
 				C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */,
 				C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */,
+				C9AACBEB2DF031EA00D0F99D /* FilterAttendanceDateView.swift */,
+				C9AACBED2DF032F400D0F99D /* CalendarView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -418,16 +471,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AACBE82DEFFBD600D0F99D /* AttendanceHistoryViewModel.swift in Sources */,
 				C97185D32DD5F3A2004A1F7A /* SectionHeaderView.swift in Sources */,
 				C9B861DC2DEEB6C8001DE2B5 /* Encodable+Extension.swift in Sources */,
 				C9CB06F32DED535000479F2C /* LoginResponse.swift in Sources */,
 				C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */,
 				C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */,
+				C9AACBEE2DF032F400D0F99D /* CalendarView.swift in Sources */,
+				C9AACBF82DF17C3600D0F99D /* ImagePicker.swift in Sources */,
 				C90574932DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift in Sources */,
 				C905743B2DD481520061EEF0 /* MyLeaveView.swift in Sources */,
+				C9AACBEA2DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift in Sources */,
 				C98C09D72DE45A33000D6E8B /* ConfirmPasswordField.swift in Sources */,
+				C9AACBF22DF0517800D0F99D /* CheckInRequest.swift in Sources */,
 				C90574322DD456650061EEF0 /* HomeView.swift in Sources */,
 				C9CB06F72DED54BD00479F2C /* LoginViewModel.swift in Sources */,
+				C9AACBF62DF1703700D0F99D /* AttendanceSummaryItem.swift in Sources */,
 				C9CB06F92DED56FD00479F2C /* Collection+Extension.swift in Sources */,
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
 				C91B8AFB2DDC8748004C25BC /* LoginView.swift in Sources */,
@@ -441,6 +500,7 @@
 				C9B861DE2DEEE336001DE2B5 /* AttendanceHistoryResponse.swift in Sources */,
 				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
 				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
+				C9AACBEC2DF031EA00D0F99D /* FilterAttendanceDateView.swift in Sources */,
 				C98C09E02DE8CC70000D6E8B /* HomeViewModel.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
 				C90574372DD481240061EEF0 /* ContactView.swift in Sources */,

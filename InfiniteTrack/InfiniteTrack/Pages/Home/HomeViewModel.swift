@@ -13,9 +13,7 @@ final class HomeViewModel: ObservableObject {
     
     @Published var locationName: String = "Loading..."
     @Published var currentDate: String = ""
-//    @Published var userResponse: UserResponse?
-    
-//    private var userDetail: UserDetail? = UserApi.shared.getUserDetail()
+    @Published var todayAttendance: AttendanceHistoryDisplayModel?
     @Published var userDetail: UserDetail?
     
     init() {
@@ -26,6 +24,7 @@ final class HomeViewModel: ObservableObject {
         getUserLocation()
         getCurrentDate()
         getUserDetail()
+        fetchTodayAttendance()
     }
     
     private func getCurrentDate() {
@@ -37,21 +36,6 @@ final class HomeViewModel: ObservableObject {
     }
     
     private func getUserDetail() {
-//        if let userDetail = userDetail {
-//            guard let userId = userDetail.userId else { return }
-//            
-//            Task {
-//                do {
-//                    let response: UserResponse = try await ApiManager.shared.request(endpoint: "/users/get/\(userId)")
-//                    await MainActor.run {
-//                        self.userResponse = response
-//                    }
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-        
         self.userDetail = UserApi.shared.getUserDetail()
     }
     
@@ -66,4 +50,29 @@ final class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
+    func fetchTodayAttendance() {
+        Task {
+            do {
+                let responses = try await AttendanceApi.shared.getAttendanceHistory()
+                let items = responses.map { AttendanceHistoryDisplayModel(from: $0) }
+                let today = Date()
+
+                if let todayItem = items.first(where: {
+                    Calendar.current.isDate($0.date, inSameDayAs: today)
+                }) {
+                    await MainActor.run {
+                        self.todayAttendance = todayItem
+                    }
+                } else {
+                    await MainActor.run {
+                        self.todayAttendance = nil
+                    }
+                }
+            } catch {
+                print("Error fetching attendance: \(error.localizedDescription)")
+            }
+        }
+    }
+
 }

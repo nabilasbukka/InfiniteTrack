@@ -16,22 +16,22 @@ struct MainTabView: View {
             .tabItem {
                 Label("Home", systemImage: "house.fill")
             }
-
+            
             EmptyView()
                 .tabItem {
                     Label("Contact", systemImage: "phone.fill")
                 }
-
+            
             EmptyView()
                 .tabItem {
                     Label("Check In", systemImage: "checkmark.circle.fill")
                 }
-
-            EmptyView()
+            
+            AttendanceHistoryView()
                 .tabItem {
-                    Label("My Leaves", systemImage: "bag.fill")
+                    Label("My Attendance", systemImage: "document.badge.clock")
                 }
-
+            
             NavigationStack {
                 ProfileView()
             }
@@ -41,8 +41,6 @@ struct MainTabView: View {
         }
     }
 }
-
-
 
 #Preview {
     MainTabView()

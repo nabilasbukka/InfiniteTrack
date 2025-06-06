@@ -60,7 +60,7 @@ class LiveAttendanceViewModel: ObservableObject {
                 notes: notes
             )
             do {
-                let response = try await AttendanceApi.shared.checkIn(body: body)
+                let response = try await AttendanceApi.shared.checkIn(body: body, image: capturedImage)
                 print(response)
             } catch {
                 print(error.localizedDescription)
@@ -107,6 +107,8 @@ class LiveAttendanceViewModel: ObservableObject {
     
     func openCamera() {
         isShowingCamera = true
+        // tampilkan kamera
+        // get captured image
     }
     
     func setImage(_ image: UIImage) {

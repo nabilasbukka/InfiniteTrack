@@ -147,6 +147,36 @@ struct HomeView: View {
         }
     }
     
+    @ViewBuilder
+    func summaryAttendanceToday() -> some View {
+        VStack(alignment: .center, spacing: 16) {
+            Text(Date().toString(format: "EEEE, dd MMM yyyy"))
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundColor(.dark500)
+
+            if let attendance = viewModel.todayAttendance {
+                HStack(spacing: 26) {
+                    AttendanceSummaryItem(title: "Check-in", time: attendance.checkInTime)
+                    AttendanceSummaryItem(title: "Check-out", time: attendance.checkOutTime)
+                    AttendanceSummaryItem(title: "Total Hours", time: attendance.totalHours)
+                }
+            } else {
+                Text("Belum ada data absensi hari ini.")
+                    .font(.system(size: 14))
+                    .foregroundColor(.gray)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.white.opacity(0.5))
+                .shadow(color: Color.primary500.opacity(0.3), radius: 8, x: 0, y: 4)
+        )
+        .padding(.horizontal, 10)
+        .padding(.top, 10)
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -164,11 +194,13 @@ struct HomeView: View {
                             }
                     }
                     
+                    summaryAttendanceToday()
+                    
                     //                    homeSummaryCardInternView()
                     
                     rankAttendanceEmployeeView()
                     //
-                    attendanceHistoryView()
+                    //                    attendanceHistoryView()
                 }
             }
             .onChange(of: showAttendanceHistory) {
@@ -189,8 +221,4 @@ struct HomeView: View {
             }
         }
     }
-}
-
-#Preview {
-    HomeView()
 }
