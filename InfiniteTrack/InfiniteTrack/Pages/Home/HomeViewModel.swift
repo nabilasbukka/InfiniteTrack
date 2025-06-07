@@ -18,6 +18,15 @@ final class HomeViewModel: ObservableObject {
     
     init() {
         observeUserLocation()
+        observeAttendanceUpdates()
+    }
+    
+    private func observeAttendanceUpdates() {
+        NotificationCenter.default.publisher(for: Notification.Name("didUpdateAttendance"))
+            .sink { [weak self] _ in
+                self?.fetchTodayAttendance()
+            }
+            .store(in: &cancellables)
     }
     
     func onAppear() {
@@ -25,6 +34,7 @@ final class HomeViewModel: ObservableObject {
         getCurrentDate()
         getUserDetail()
         fetchTodayAttendance()
+        
     }
     
     private func getCurrentDate() {

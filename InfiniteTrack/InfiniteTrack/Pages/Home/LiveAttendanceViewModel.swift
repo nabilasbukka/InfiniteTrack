@@ -62,6 +62,11 @@ class LiveAttendanceViewModel: ObservableObject {
             do {
                 let response = try await AttendanceApi.shared.checkIn(body: body, image: capturedImage)
                 print(response)
+                
+                // Update HomeViewModel's todayAttendance after successful check-in/check-out
+                await MainActor.run {
+                    NotificationCenter.default.post(name: Notification.Name("didUpdateAttendance"), object: nil)
+                }
             } catch {
                 print(error.localizedDescription)
             }
