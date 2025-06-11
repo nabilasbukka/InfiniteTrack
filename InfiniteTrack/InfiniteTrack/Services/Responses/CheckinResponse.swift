@@ -9,8 +9,8 @@ import Foundation
 
 struct CheckInResponse: Codable {
     let message: String
-    let attendanceId: Int
-    let attendanceStatus: String
+    let attendanceId: Int?
+    let attendanceStatus: String?
 
     enum CodingKeys: String, CodingKey {
         case message

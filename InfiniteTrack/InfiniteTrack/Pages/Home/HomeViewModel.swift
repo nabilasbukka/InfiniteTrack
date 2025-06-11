@@ -13,7 +13,7 @@ final class HomeViewModel: ObservableObject {
     
     @Published var locationName: String = "Loading..."
     @Published var currentDate: String = ""
-    @Published var todayAttendance: AttendanceHistoryDisplayModel?
+    @Published var todayAttendance: AttendanceOverviewUIModel?
     @Published var userDetail: UserDetail?
     
     init() {
@@ -64,20 +64,10 @@ final class HomeViewModel: ObservableObject {
     func fetchTodayAttendance() {
         Task {
             do {
-                let responses = try await AttendanceApi.shared.getAttendanceHistory()
-                let items = responses.map { AttendanceHistoryDisplayModel(from: $0) }
-                let today = Date()
-
-                if let todayItem = items.first(where: {
-                    Calendar.current.isDate($0.date, inSameDayAs: today)
-                }) {
-                    await MainActor.run {
-                        self.todayAttendance = todayItem
-                    }
-                } else {
-                    await MainActor.run {
-                        self.todayAttendance = nil
-                    }
+                let response = try await AttendanceApi.shared.getAttendanceOverview()
+                let uiModel = AttendanceOverviewUIModel(from: response)
+                await MainActor.run {
+                    self.todayAttendance = uiModel
                 }
             } catch {
                 print("Error fetching attendance: \(error.localizedDescription)")

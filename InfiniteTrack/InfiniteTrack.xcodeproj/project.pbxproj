@@ -22,7 +22,7 @@
 		C91B8AF82DDC796C004C25BC /* LiveAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B8AF72DDC796C004C25BC /* LiveAttendanceViewModel.swift */; };
 		C91B8AFB2DDC8748004C25BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B8AFA2DDC8748004C25BC /* LoginView.swift */; };
 		C962BA6F2DDDC99C00DED8DA /* BackButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962BA6E2DDDC99C00DED8DA /* BackButtonViewModifier.swift */; };
-		C96373D32DDAF0A000807E47 /* CompleteProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */; };
+		C96373D32DDAF0A000807E47 /* PopUpInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D22DDAF0A000807E47 /* PopUpInformationView.swift */; };
 		C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D42DDB106000807E47 /* LiveAttendanceView.swift */; };
 		C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D82DDB2AD000807E47 /* NavigationState.swift */; };
 		C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */; };
@@ -44,6 +44,9 @@
 		C9AACBF22DF0517800D0F99D /* CheckInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBF12DF0517800D0F99D /* CheckInRequest.swift */; };
 		C9AACBF62DF1703700D0F99D /* AttendanceSummaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBF52DF1703700D0F99D /* AttendanceSummaryItem.swift */; };
 		C9AACBF82DF17C3600D0F99D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AACBF72DF17C3600D0F99D /* ImagePicker.swift */; };
+		C9B27C2D2DF81C0A0022181B /* AttendanceOverviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B27C2C2DF81C0A0022181B /* AttendanceOverviewResponse.swift */; };
+		C9B27C302DF81EF10022181B /* AttendanceOverviewUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B27C2F2DF81EF10022181B /* AttendanceOverviewUIModel.swift */; };
+		C9B27C322DF82A3A0022181B /* PopUpInformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B27C312DF82A3A0022181B /* PopUpInformationType.swift */; };
 		C9B861D82DEEA030001DE2B5 /* CheckinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B861D72DEEA030001DE2B5 /* CheckinResponse.swift */; };
 		C9B861DA2DEEB35C001DE2B5 /* AttendanceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B861D92DEEB35C001DE2B5 /* AttendanceApi.swift */; };
 		C9B861DC2DEEB6C8001DE2B5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B861DB2DEEB6C8001DE2B5 /* Encodable+Extension.swift */; };
@@ -83,7 +86,7 @@
 		C91B8AF72DDC796C004C25BC /* LiveAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAttendanceViewModel.swift; sourceTree = "<group>"; };
 		C91B8AFA2DDC8748004C25BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C962BA6E2DDDC99C00DED8DA /* BackButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonViewModifier.swift; sourceTree = "<group>"; };
-		C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileInfoView.swift; sourceTree = "<group>"; };
+		C96373D22DDAF0A000807E47 /* PopUpInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpInformationView.swift; sourceTree = "<group>"; };
 		C96373D42DDB106000807E47 /* LiveAttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAttendanceView.swift; sourceTree = "<group>"; };
 		C96373D82DDB2AD000807E47 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenRouterView.swift; sourceTree = "<group>"; };
@@ -105,6 +108,9 @@
 		C9AACBF12DF0517800D0F99D /* CheckInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInRequest.swift; sourceTree = "<group>"; };
 		C9AACBF52DF1703700D0F99D /* AttendanceSummaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceSummaryItem.swift; sourceTree = "<group>"; };
 		C9AACBF72DF17C3600D0F99D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C9B27C2C2DF81C0A0022181B /* AttendanceOverviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceOverviewResponse.swift; sourceTree = "<group>"; };
+		C9B27C2F2DF81EF10022181B /* AttendanceOverviewUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceOverviewUIModel.swift; sourceTree = "<group>"; };
+		C9B27C312DF82A3A0022181B /* PopUpInformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpInformationType.swift; sourceTree = "<group>"; };
 		C9B861D72DEEA030001DE2B5 /* CheckinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinResponse.swift; sourceTree = "<group>"; };
 		C9B861D92DEEB35C001DE2B5 /* AttendanceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceApi.swift; sourceTree = "<group>"; };
 		C9B861DB2DEEB6C8001DE2B5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
@@ -241,6 +247,7 @@
 		C91B6FA82DCE02FF005CF46A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C9B27C2E2DF81EB60022181B /* Models */,
 				C90574312DD456650061EEF0 /* HomeView.swift */,
 				C98C09DF2DE8CC70000D6E8B /* HomeViewModel.swift */,
 				C96373D82DDB2AD000807E47 /* NavigationState.swift */,
@@ -264,7 +271,8 @@
 		C96373D12DDAF06800807E47 /* PopUpInformation */ = {
 			isa = PBXGroup;
 			children = (
-				C96373D22DDAF0A000807E47 /* CompleteProfileInfoView.swift */,
+				C96373D22DDAF0A000807E47 /* PopUpInformationView.swift */,
+				C9B27C312DF82A3A0022181B /* PopUpInformationType.swift */,
 			);
 			path = PopUpInformation;
 			sourceTree = "<group>";
@@ -301,6 +309,14 @@
 				C9AACBEF2DF04C7100D0F99D /* AttendanceHistory */,
 			);
 			path = MyAttendance;
+			sourceTree = "<group>";
+		};
+		C9B27C2E2DF81EB60022181B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9B27C2F2DF81EF10022181B /* AttendanceOverviewUIModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C9B8DEBD2CA51293006F4B66 = {
@@ -362,6 +378,7 @@
 				C9CB06FA2DED5E5C00479F2C /* BasicResponse.swift */,
 				C9B861D72DEEA030001DE2B5 /* CheckinResponse.swift */,
 				C9B861DD2DEEE336001DE2B5 /* AttendanceHistoryResponse.swift */,
+				C9B27C2C2DF81C0A0022181B /* AttendanceOverviewResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -471,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B27C2D2DF81C0A0022181B /* AttendanceOverviewResponse.swift in Sources */,
 				C9AACBE82DEFFBD600D0F99D /* AttendanceHistoryViewModel.swift in Sources */,
 				C97185D32DD5F3A2004A1F7A /* SectionHeaderView.swift in Sources */,
 				C9B861DC2DEEB6C8001DE2B5 /* Encodable+Extension.swift in Sources */,
@@ -506,6 +524,8 @@
 				C90574372DD481240061EEF0 /* ContactView.swift in Sources */,
 				C91B8AF62DDC68F4004C25BC /* PrimaryButton.swift in Sources */,
 				C9B861D82DEEA030001DE2B5 /* CheckinResponse.swift in Sources */,
+				C9B27C302DF81EF10022181B /* AttendanceOverviewUIModel.swift in Sources */,
+				C9B27C322DF82A3A0022181B /* PopUpInformationType.swift in Sources */,
 				C90574392DD481390061EEF0 /* ProfileView.swift in Sources */,
 				C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */,
 				C98C09D92DE462FF000D6E8B /* InputEmailField.swift in Sources */,
@@ -524,7 +544,7 @@
 				C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */,
 				C9CB06FD2DED66CF00479F2C /* UserDefaultsManager.swift in Sources */,
 				C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */,
-				C96373D32DDAF0A000807E47 /* CompleteProfileInfoView.swift in Sources */,
+				C96373D32DDAF0A000807E47 /* PopUpInformationView.swift in Sources */,
 				C9CB06F52DED53C500479F2C /* UserApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

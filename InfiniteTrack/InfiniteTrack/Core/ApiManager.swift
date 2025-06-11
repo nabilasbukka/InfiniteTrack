@@ -27,6 +27,9 @@ final class ApiManager {
         return try await withCheckedThrowingContinuation { continuation in
             AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
                 .validate({ request, response, data in
+                    if let data, let responseString = String(data: data, encoding: .utf8) {
+                        print(responseString)
+                    }
                     if response.statusCode >= 400, let data {
                         do {
                             let basicResponse = try JSONDecoder().decode(BasicResponse.self, from: data)
@@ -108,5 +111,8 @@ struct UserResponse: Codable {
     let division: String?
     let headprogram: String?
 }
+
+//{"message":"Check-in successful","attendanceId":76,"attendance_status":"Confirmed"}
+//CheckInResponse(message: "Check-in successful", attendanceId: 76, attendanceStatus: "Confirmed")
 
 

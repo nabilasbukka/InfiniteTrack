@@ -20,9 +20,12 @@ extension Date {
         return Calendar.current.date(from: components) ?? .now
     }
     
-    func toString(format: String = "EEEE, dd MMMM yyyy") -> String {
+    func toString(format: String = "EEEE, dd MMMM yyyy", timeZone: TimeZone? = nil) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        if let timeZone {
+            formatter.timeZone = timeZone
+        }
         return formatter.string(from: self)
     }
     

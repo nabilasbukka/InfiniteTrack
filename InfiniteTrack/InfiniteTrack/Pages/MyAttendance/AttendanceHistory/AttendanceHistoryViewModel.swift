@@ -14,7 +14,7 @@ class AttendanceHistoryViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String? = nil
     @Published var startDate: Date = .now.backward(days: 7)
-    @Published var minStartDate: Date = .now.backward(days: 7)
+    @Published var minStartDate: Date = .now.backward(days: 60)
     @Published var endDate: Date = .now
     
     func onAppear() {

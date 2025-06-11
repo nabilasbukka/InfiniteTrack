@@ -32,4 +32,8 @@ final class AttendanceApi {
         let userId = user?.userId ?? 0
         return try await ApiManager.shared.request(endpoint: "/users/attendance/\(userId)")
     }
+    
+    func getAttendanceOverview() async throws -> AttendanceOverviewResponse {
+        return try await ApiManager.shared.request(endpoint: "/attendance/users/overview")
+    }
 }

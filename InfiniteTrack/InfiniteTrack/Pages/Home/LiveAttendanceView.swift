@@ -202,31 +202,46 @@ struct LiveAttendanceView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center, spacing: 16) {
-                segmentedView()
-                
-                Text(viewModel.currentTime)
-                    .font(.system(size: 32, weight: .medium))
-                    .foregroundColor(.dark500)
-                
-                Text(viewModel.currentDate)
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.dark300)
-                
-                scheduleSectionView()
-                
-                addNotesView()
-                
-                uploadImageView()
-                
-                Spacer()
-                
-                PrimaryButton(title: "Send", action: {
-                    viewModel.submitAttendance()
-                })
+        ZStack {
+            ScrollView {
+                VStack(alignment: .center, spacing: 16) {
+                    segmentedView()
+                    
+                    Text(viewModel.currentTime)
+                        .font(.system(size: 32, weight: .medium))
+                        .foregroundColor(.dark500)
+                    
+                    Text(viewModel.currentDate)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.dark300)
+                    
+                    scheduleSectionView()
+                    
+                    addNotesView()
+                    
+                    uploadImageView()
+                    
+                    Spacer()
+                    
+                    PrimaryButton(title: "Send", action: {
+                        viewModel.submitAttendance()
+                    })
+                }
+                .padding(12)
             }
-            .padding(12)
+            
+            if let popUpInformationType = viewModel.popUpInformationType {
+                PopUpInformationView(
+                    imageName: popUpInformationType.imageName,
+                    title: popUpInformationType.title,
+                    descInfo: popUpInformationType.subTitle,
+                    btnActionText: "OK",
+                    buttonAction: {
+                        viewModel.onClickButtonPopUpInfo()
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                )
+            }
         }
         .navigationTitle("Live Attendance")
         .navigationBarTitleDisplayMode(.inline)

@@ -19,6 +19,7 @@ class LiveAttendanceViewModel: ObservableObject {
     @Published var attendanceType: AttendanceType = .office
     @Published var attendanceAction: AttendanceAction = .checkIn
     @Published var notes: String = ""
+    @Published var popUpInformationType: PopUpInformationType?
     private var userLocation: (latitude: Double, longitude: Double)?
     private var timer: Timer?
     private var cancellables = Set<AnyCancellable>()
@@ -61,7 +62,7 @@ class LiveAttendanceViewModel: ObservableObject {
             )
             do {
                 let response = try await AttendanceApi.shared.checkIn(body: body, image: capturedImage)
-                print(response)
+                await didSuccessSubmitAttendance(response: response)
                 
                 // Update HomeViewModel's todayAttendance after successful check-in/check-out
                 await MainActor.run {
@@ -108,6 +109,25 @@ class LiveAttendanceViewModel: ObservableObject {
                 break
             }
         }
+    }
+    
+    @MainActor
+    private func didSuccessSubmitAttendance(response: CheckInResponse) {
+        switch response.attendanceStatus?.lowercased() {
+        case "late":
+            popUpInformationType = .liveAttendanceLate
+        case "confirmed":
+            popUpInformationType = .liveAttendanceConfirmed
+        case "overtime":
+            popUpInformationType = .liveAttendanceOvertime
+        default:
+            break
+        }
+    }
+    
+    func onClickButtonPopUpInfo() {
+        popUpInformationType = nil
+        
     }
     
     func openCamera() {
