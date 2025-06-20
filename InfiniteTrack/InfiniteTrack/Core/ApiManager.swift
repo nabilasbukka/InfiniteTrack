@@ -9,6 +9,12 @@ import Foundation
 import Alamofire
 import UIKit
 
+enum ApiError: LocalizedError {
+    case noInternetConnection
+    case generalError(String)
+    case internalServerError(String)
+}
+
 final class ApiManager {
     let baseUrl: String = "https://infinitetrack.infinitelearningproject.com"
     static let shared = ApiManager()
@@ -31,12 +37,18 @@ final class ApiManager {
                         print(responseString)
                     }
                     if response.statusCode >= 400, let data {
+                        let message: String
                         do {
                             let basicResponse = try JSONDecoder().decode(BasicResponse.self, from: data)
-                            return .failure(basicResponse)
+                            message = basicResponse.message ?? ""
                         } catch {
-                            return .failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: error)))
+                            message = AFError.responseSerializationFailed(reason: .decodingFailed(error: error)).localizedDescription
                         }
+                        if response.statusCode < 500 {
+                            
+                            return .failure(ApiError.generalError(message))
+                        }
+                        return .failure(ApiError.internalServerError(message))
                     }
                     return .success(())
                 })
@@ -47,7 +59,11 @@ final class ApiManager {
                         continuation.resume(returning: data)
                     case .failure(let error):
                         // throw error
-                        continuation.resume(throwing: error)
+                        if let urlError = error.underlyingError as? URLError, urlError.code == .notConnectedToInternet {
+                            continuation.resume(throwing: ApiError.noInternetConnection)
+                        } else {
+                            continuation.resume(throwing: error)
+                        }
                     }
                 }
         }
@@ -68,7 +84,7 @@ final class ApiManager {
         }
         
         return try await withCheckedThrowingContinuation { continuation in
-//            AF.request(url, method: .post, parameters: parameters, encoding: encoding, headers: headers)
+            //            AF.request(url, method: .post, parameters: parameters, encoding: encoding, headers: headers)
             AF.upload(multipartFormData: { multipartFormData in
                 multipartFormData.append(imageData, withName: "upload_image", fileName: "image.jpg", mimeType: "image/jpeg")
                 
@@ -79,30 +95,30 @@ final class ApiManager {
                     }
                 }
             }, to: url, headers: headers)
-                .validate({ request, response, data in
-                    if response.statusCode >= 400, let data {
-                        do {
-                            let basicResponse = try JSONDecoder().decode(BasicResponse.self, from: data)
-                            return .failure(basicResponse)
-                        } catch {
-                            return .failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: error)))
-                        }
-                    }
-                    return .success(())
-                })
-                .responseDecodable(of: Response.self, queue: .global(qos: .background)) { response in
-                    switch response.result {
-                    case .success(let data):
-                        // return decodable
-                        continuation.resume(returning: data)
-                    case .failure(let error):
-                        // throw error
-                        continuation.resume(throwing: error)
+            .validate({ request, response, data in
+                if response.statusCode >= 400, let data {
+                    do {
+                        let basicResponse = try JSONDecoder().decode(BasicResponse.self, from: data)
+                        return .failure(basicResponse)
+                    } catch {
+                        return .failure(AFError.responseSerializationFailed(reason: .decodingFailed(error: error)))
                     }
                 }
+                return .success(())
+            })
+            .responseDecodable(of: Response.self, queue: .global(qos: .background)) { response in
+                switch response.result {
+                case .success(let data):
+                    // return decodable
+                    continuation.resume(returning: data)
+                case .failure(let error):
+                    // throw error
+                    continuation.resume(throwing: error)
+                }
+            }
         }
     }
-
+    
 }
 
 struct UserResponse: Codable {

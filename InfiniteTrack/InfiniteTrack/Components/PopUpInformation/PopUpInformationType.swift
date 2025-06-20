@@ -11,6 +11,7 @@ enum PopUpInformationType {
     case liveAttendanceConfirmed
     case liveAttendanceLate
     case liveAttendanceOvertime
+    case noInternetConnection
     
     var title: String {
         switch self {
@@ -20,6 +21,8 @@ enum PopUpInformationType {
             return "You're Late"
         case .liveAttendanceOvertime:
             return "You Worked Overtime"
+        case .noInternetConnection:
+            return "No Internet Connection"
         }
     }
     
@@ -30,7 +33,9 @@ enum PopUpInformationType {
         case .liveAttendanceLate:
             return "Punctuality"
         case .liveAttendanceOvertime:
-            return "Your attendance has been confirmed" 
+            return "Your attendance has been confirmed"
+        case .noInternetConnection:
+            return "Please check your connection and try again!"
         }
     }
     
@@ -42,6 +47,8 @@ enum PopUpInformationType {
             return "img_update_profile"
         case .liveAttendanceOvertime:
             return "ic_overtime"
+        case .noInternetConnection:
+            return "ic_no_internet"
         }
     }
 }

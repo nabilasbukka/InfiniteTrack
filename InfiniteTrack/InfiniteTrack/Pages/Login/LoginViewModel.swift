@@ -42,6 +42,18 @@ final class LoginViewModel: ObservableObject {
             do {
                 let response: LoginResponse = try await UserApi.shared.login(email: email, password: password)
                 await handleSuccessLogin(response: response)
+            } catch let error as ApiError {
+                switch error {
+                case .generalError(let message):
+                    await MainActor.run {
+                        errorMessage = message
+                    }
+                case .internalServerError(let message):
+                    await MainActor.run {
+                        errorMessage = message
+                    }
+                default: break
+                }
             } catch {
                 await MainActor.run {
                     errorMessage = error.localizedDescription

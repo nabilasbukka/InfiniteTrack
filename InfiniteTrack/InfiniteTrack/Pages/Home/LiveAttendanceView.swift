@@ -238,7 +238,9 @@ struct LiveAttendanceView: View {
                     btnActionText: "OK",
                     buttonAction: {
                         viewModel.onClickButtonPopUpInfo()
-                        presentationMode.wrappedValue.dismiss()
+                        if popUpInformationType != .noInternetConnection {
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
                 )
             }

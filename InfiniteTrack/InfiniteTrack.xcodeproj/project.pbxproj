@@ -21,6 +21,8 @@
 		C91B8AF62DDC68F4004C25BC /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B8AF52DDC68F4004C25BC /* PrimaryButton.swift */; };
 		C91B8AF82DDC796C004C25BC /* LiveAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B8AF72DDC796C004C25BC /* LiveAttendanceViewModel.swift */; };
 		C91B8AFB2DDC8748004C25BC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B8AFA2DDC8748004C25BC /* LoginView.swift */; };
+		C91F77012E040B6E00BB235C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F77002E040B6E00BB235C /* ProfileViewModel.swift */; };
+		C91F77032E040CF200BB235C /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F77022E040CF200BB235C /* LoginState.swift */; };
 		C962BA6F2DDDC99C00DED8DA /* BackButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962BA6E2DDDC99C00DED8DA /* BackButtonViewModifier.swift */; };
 		C96373D32DDAF0A000807E47 /* PopUpInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D22DDAF0A000807E47 /* PopUpInformationView.swift */; };
 		C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96373D42DDB106000807E47 /* LiveAttendanceView.swift */; };
@@ -85,6 +87,8 @@
 		C91B8AF52DDC68F4004C25BC /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		C91B8AF72DDC796C004C25BC /* LiveAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAttendanceViewModel.swift; sourceTree = "<group>"; };
 		C91B8AFA2DDC8748004C25BC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C91F77002E040B6E00BB235C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C91F77022E040CF200BB235C /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		C962BA6E2DDDC99C00DED8DA /* BackButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonViewModifier.swift; sourceTree = "<group>"; };
 		C96373D22DDAF0A000807E47 /* PopUpInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpInformationView.swift; sourceTree = "<group>"; };
 		C96373D42DDB106000807E47 /* LiveAttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAttendanceView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				C90574382DD481390061EEF0 /* ProfileView.swift */,
+				C91F77002E040B6E00BB235C /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				C96373DA2DDB2B6E00807E47 /* FullScreenRouterView.swift */,
 				C96373D42DDB106000807E47 /* LiveAttendanceView.swift */,
 				C91B8AF72DDC796C004C25BC /* LiveAttendanceViewModel.swift */,
+				C91F77022E040CF200BB235C /* LoginState.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				C9AACBEA2DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift in Sources */,
 				C98C09D72DE45A33000D6E8B /* ConfirmPasswordField.swift in Sources */,
 				C9AACBF22DF0517800D0F99D /* CheckInRequest.swift in Sources */,
+				C91F77012E040B6E00BB235C /* ProfileViewModel.swift in Sources */,
 				C90574322DD456650061EEF0 /* HomeView.swift in Sources */,
 				C9CB06F72DED54BD00479F2C /* LoginViewModel.swift in Sources */,
 				C9AACBF62DF1703700D0F99D /* AttendanceSummaryItem.swift in Sources */,
@@ -512,6 +519,7 @@
 				C962BA6F2DDDC99C00DED8DA /* BackButtonViewModifier.swift in Sources */,
 				C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */,
 				C9B861E02DEEE975001DE2B5 /* String+Extension.swift in Sources */,
+				C91F77032E040CF200BB235C /* LoginState.swift in Sources */,
 				C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */,
 				C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */,
 				C98C09DE2DE8CB99000D6E8B /* LocationManager.swift in Sources */,

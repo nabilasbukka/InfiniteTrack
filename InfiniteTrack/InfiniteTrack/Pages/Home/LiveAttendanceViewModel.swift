@@ -68,6 +68,15 @@ class LiveAttendanceViewModel: ObservableObject {
                 await MainActor.run {
                     NotificationCenter.default.post(name: Notification.Name("didUpdateAttendance"), object: nil)
                 }
+            } catch let error as ApiError {
+                switch error {
+                case .noInternetConnection:
+                    await MainActor.run {
+                        popUpInformationType = .noInternetConnection
+                    }
+                default:
+                    print(error.localizedDescription)
+                }
             } catch {
                 print(error.localizedDescription)
             }

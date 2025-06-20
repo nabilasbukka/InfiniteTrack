@@ -36,4 +36,8 @@ final class UserDefaultsManager {
     func get<Value: Decodable>(key: UserDefaultsKey) -> Value? {
         get(rawKey: key.rawValue)
     }
+    
+    func remove(key: UserDefaultsKey) {
+        UserDefaults.standard.removeObject(forKey: key.rawValue)
+    }
 }

@@ -9,8 +9,12 @@ import SwiftUI
 
 @main
 struct InfiniteTrackApp: App {
-    @State var isLoginSuccess: Bool = false
+    @StateObject var loginState = LoginState()
     @StateObject var navState = NavigationState()
+    
+    init() {
+        checkLogin()
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -22,25 +26,25 @@ struct InfiniteTrackApp: App {
             //                    .environmentObject(navState)
             //            }
             
-            if isLoginSuccess {
-                MainTabView()
-                    .environmentObject(navState)
-                    .onAppear{
-                        UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "chevron.left.square")
-                        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left.square")
-                    }
-            } else {
-                LoginView(isLoginSuccess: $isLoginSuccess)
-                    .task {
-                        checkLogin()
-                    }
+            ZStack {
+                if loginState.isLoggedIn {
+                    MainTabView()
+                        .environmentObject(navState)
+                        .environmentObject(loginState)
+                        .onAppear{
+                            UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "chevron.left.square")
+                            UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left.square")
+                        }
+                } else {
+                    LoginView(isLoginSuccess: $loginState.isLoggedIn)
+                }
             }
         }
     }
     
     private func checkLogin() {
         if let _: LoginResponse = UserDefaultsManager.shared.get(key: .user) {
-            isLoginSuccess = true
+            loginState.isLoggedIn = true
         }
     }
 }
