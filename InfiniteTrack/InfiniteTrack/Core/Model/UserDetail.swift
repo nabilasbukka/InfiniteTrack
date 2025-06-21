@@ -15,4 +15,5 @@ struct UserDetail: Codable {
     let userRole: String?
     let positionName: String?
     let message: String?
+    let greeting: String?
 }

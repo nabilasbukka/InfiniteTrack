@@ -73,20 +73,25 @@ struct LoginView: View {
     }
     
     var body: some View {
-        VStack(spacing: 12) {
-            bannerLoginView()
-            
-            inputEmailPasswordView()
-            
-            if viewModel.errorMessage.isNotEmpty {
-                wrongPasswordMsgError(message: viewModel.errorMessage)
-            }
-            
-            forgotPasswordBtn()
+        ScrollView {
+            VStack(spacing: 12) {
+                bannerLoginView()
+                
+                inputEmailPasswordView()
+                
+                if viewModel.errorMessage.isNotEmpty {
+                    wrongPasswordMsgError(message: viewModel.errorMessage)
+                }
+                
+                forgotPasswordBtn()
 
+            }
         }
         .padding(16)
         .pageBackground()
+        .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
         .onChange(of: viewModel.isLoginSuccess) {
             isLoginSuccess = viewModel.isLoginSuccess
         }

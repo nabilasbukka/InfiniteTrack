@@ -70,6 +70,7 @@
 		C9E4955A2DD722AC008A17A9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E495592DD722AC008A17A9 /* View+Extension.swift */; };
 		C9E4955C2DD72D66008A17A9 /* AttendanceRankCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */; };
 		C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EA33C92DDD8ECF00233FCC /* ForgotPasswordView.swift */; };
+		C9EC36DD2E067CDE00B62165 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC36DC2E067CDE00B62165 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		C9E495592DD722AC008A17A9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		C9E4955B2DD72D66008A17A9 /* AttendanceRankCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRankCardView.swift; sourceTree = "<group>"; };
 		C9EA33C92DDD8ECF00233FCC /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		C9EC36DC2E067CDE00B62165 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				C9CB06F82DED56FD00479F2C /* Collection+Extension.swift */,
 				C9B861DB2DEEB6C8001DE2B5 /* Encodable+Extension.swift */,
 				C9B861DF2DEEE975001DE2B5 /* String+Extension.swift */,
+				C9EC36DC2E067CDE00B62165 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */,
 				C9AACBEE2DF032F400D0F99D /* CalendarView.swift in Sources */,
 				C9AACBF82DF17C3600D0F99D /* ImagePicker.swift in Sources */,
+				C9EC36DD2E067CDE00B62165 /* UIApplication+Extension.swift in Sources */,
 				C90574932DD4A6BD0061EEF0 /* DashboardFeatureItemView.swift in Sources */,
 				C905743B2DD481520061EEF0 /* MyLeaveView.swift in Sources */,
 				C9AACBEA2DF01D9800D0F99D /* AttendanceHistoryDisplayModel.swift in Sources */,

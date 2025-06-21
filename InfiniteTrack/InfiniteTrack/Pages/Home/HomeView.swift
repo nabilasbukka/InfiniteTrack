@@ -184,7 +184,7 @@ struct HomeView: View {
                     navigationView()
                     if let userDetail = viewModel.userDetail {
                         HomeSummaryCardView(
-                            greetingMessage: "Halo,",
+                            greetingMessage: userDetail.greeting ?? "Halo,",
                             name: userDetail.userName ?? "-",
                             role: userDetail.positionName ?? "-",
                             imageProfile: Image("img_profile"),
