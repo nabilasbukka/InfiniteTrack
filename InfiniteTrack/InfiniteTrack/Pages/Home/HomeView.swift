@@ -161,7 +161,7 @@ struct HomeView: View {
                     AttendanceSummaryItem(title: "Total Hours", time: attendance.totalHours)
                 }
             } else {
-                Text("Belum ada data absensi hari ini.")
+                Text("There is no attendance data for today.")
                     .font(.system(size: 14))
                     .foregroundColor(.gray)
             }

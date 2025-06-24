@@ -63,7 +63,7 @@ struct LoginView: View {
         .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.top, 4)
         
-        PrimaryButton(title: "Sign In", action: {
+        PrimaryButton(title: "Sign In", isLoading: $viewModel.isLoading, action: {
             viewModel.onClickLogin()
         })
             .disabled(!viewModel.isButtonLoginEnabled)

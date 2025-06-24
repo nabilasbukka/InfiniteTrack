@@ -14,6 +14,7 @@ final class LoginViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var isButtonLoginEnabled: Bool = false
     @Published var isLoginSuccess: Bool = false
+    @Published var isLoading: Bool = false
     private var cancellables: Set<AnyCancellable> = .init()
     
     init() {
@@ -37,6 +38,7 @@ final class LoginViewModel: ObservableObject {
     }
     
     func onClickLogin() {
+        isLoading = true
         errorMessage = ""
         Task {
             do {
@@ -58,6 +60,9 @@ final class LoginViewModel: ObservableObject {
                 await MainActor.run {
                     errorMessage = error.localizedDescription
                 }
+            }
+            await MainActor.run {
+                isLoading = false
             }
         }
     }

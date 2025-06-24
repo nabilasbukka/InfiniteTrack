@@ -16,9 +16,9 @@ enum PopUpInformationType {
     var title: String {
         switch self {
         case .liveAttendanceConfirmed:
-            return "Confirmed"
+            return "Achievement Locked"
         case .liveAttendanceLate:
-            return "You're Late"
+            return "Achievement Unlocked"
         case .liveAttendanceOvertime:
             return "You Worked Overtime"
         case .noInternetConnection:
@@ -29,7 +29,7 @@ enum PopUpInformationType {
     var subTitle: String {
         switch self {
         case .liveAttendanceConfirmed:
-            return "Consistent/Dicipline"
+            return "Discipline"
         case .liveAttendanceLate:
             return "Punctuality"
         case .liveAttendanceOvertime:

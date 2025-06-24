@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct InfiniteTrackApp: App {
+    @State var isShowSplash: Bool = true
     @StateObject var loginState = LoginState()
     @StateObject var navState = NavigationState()
-    
-    init() {
-        checkLogin()
-    }
     
     var body: some Scene {
         WindowGroup {
@@ -27,17 +24,24 @@ struct InfiniteTrackApp: App {
             //            }
             
             ZStack {
-                if loginState.isLoggedIn {
-                    MainTabView()
-                        .environmentObject(navState)
-                        .environmentObject(loginState)
-                        .onAppear{
-                            UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "chevron.left.square")
-                            UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left.square")
-                        }
+                if !isShowSplash {
+                    if loginState.isLoggedIn {
+                        MainTabView()
+                            .environmentObject(navState)
+                            .environmentObject(loginState)
+                            .onAppear{
+                                UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "chevron.left.square")
+                                UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left.square")
+                            }
+                    } else {
+                        LoginView(isLoginSuccess: $loginState.isLoggedIn)
+                    }
                 } else {
-                    LoginView(isLoginSuccess: $loginState.isLoggedIn)
+                    ProgressView()
                 }
+            }
+            .onAppear {
+                checkLogin()
             }
         }
     }
@@ -46,5 +50,6 @@ struct InfiniteTrackApp: App {
         if let _: LoginResponse = UserDefaultsManager.shared.get(key: .user) {
             loginState.isLoggedIn = true
         }
+        isShowSplash = false
     }
 }

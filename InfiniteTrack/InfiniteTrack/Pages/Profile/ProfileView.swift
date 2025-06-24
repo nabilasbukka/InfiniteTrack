@@ -41,10 +41,10 @@ struct ProfileView: View {
                 .font(.system(.body) .weight(.semibold))
             
             HStack {
-                Image(systemName: "pencil")
+                Image(systemName: "info.circle")
                     .foregroundColor(.dark500)
                 
-                Text("Edit Account Profile")
+                Text("Detail Account")
                     .foregroundColor(.dark500)
                     .font(.system(.body) .weight(.regular))
                 
