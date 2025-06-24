@@ -20,7 +20,7 @@ final class ApiManager {
     static let shared = ApiManager()
     
     func request<Response: Codable>(endpoint: String, parameters: [String: Any] = [:], method: HTTPMethod = .get) async throws -> Response {
-        let url = baseUrl + endpoint
+        let url = Configuration.BASE_URL + endpoint
         
         let encoding: ParameterEncoding = method == .get ? URLEncoding.default : JSONEncoding.default
         

@@ -1,0 +1,11 @@
+//
+//  Dev.xcconfig
+//  InfiniteTrack
+//
+//  Created by Nabila Syafrina on 24/06/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+BASE_URL = https:/$()/dev-infinitetrack.infinitelearningproject.com

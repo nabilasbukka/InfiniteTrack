@@ -40,16 +40,3 @@ struct PrimaryButton: View {
         }
     }
 }
-
-struct PrimaryButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.system(size: 16, weight: .medium))
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity, minHeight: 50)
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.primary500)
-            )
-    }
-}
