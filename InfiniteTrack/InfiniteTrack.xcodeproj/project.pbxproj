@@ -74,6 +74,8 @@
 		C9EC36E32E0A494700B62165 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9EC36E22E0A494700B62165 /* Dev.xcconfig */; };
 		C9EC36E52E0A49D100B62165 /* Prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C9EC36E42E0A49D100B62165 /* Prod.xcconfig */; };
 		C9EC36E72E0A4A8B00B62165 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC36E62E0A4A8B00B62165 /* Configuration.swift */; };
+		C9EC36EA2E0A4DE700B62165 /* FLEX in Frameworks */ = {isa = PBXBuildFile; productRef = C9EC36E92E0A4DE700B62165 /* FLEX */; };
+		C9EC36EC2E0A4E5400B62165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC36EB2E0A4E5300B62165 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +147,7 @@
 		C9EC36E22E0A494700B62165 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		C9EC36E42E0A49D100B62165 /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		C9EC36E62E0A4A8B00B62165 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C9EC36EB2E0A4E5300B62165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98C09E52DE96D2F000D6E8B /* Alamofire in Frameworks */,
+				C9EC36EA2E0A4DE700B62165 /* FLEX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +370,7 @@
 				C9B8DECF2CA51294006F4B66 /* Preview Content */,
 				C9EC36E22E0A494700B62165 /* Dev.xcconfig */,
 				C9EC36E42E0A49D100B62165 /* Prod.xcconfig */,
+				C9EC36EB2E0A4E5300B62165 /* AppDelegate.swift */,
 			);
 			path = InfiniteTrack;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 			mainGroup = C9B8DEBD2CA51293006F4B66;
 			packageReferences = (
 				C98C09E32DE96D2F000D6E8B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C9EC36E82E0A4DE700B62165 /* XCRemoteSwiftPackageReference "FLEX" */,
 			);
 			productRefGroup = C9B8DEC72CA51293006F4B66 /* Products */;
 			projectDirPath = "";
@@ -547,6 +553,7 @@
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
 				C90574372DD481240061EEF0 /* ContactView.swift in Sources */,
 				C91B8AF62DDC68F4004C25BC /* PrimaryButton.swift in Sources */,
+				C9EC36EC2E0A4E5400B62165 /* AppDelegate.swift in Sources */,
 				C9B861D82DEEA030001DE2B5 /* CheckinResponse.swift in Sources */,
 				C9B27C302DF81EF10022181B /* AttendanceOverviewUIModel.swift in Sources */,
 				C9B27C322DF82A3A0022181B /* PopUpInformationType.swift in Sources */,
@@ -982,6 +989,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		C9EC36E82E0A4DE700B62165 /* XCRemoteSwiftPackageReference "FLEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FLEXTool/FLEX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.22.10;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -989,6 +1004,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C98C09E32DE96D2F000D6E8B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		C9EC36E92E0A4DE700B62165 /* FLEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9EC36E82E0A4DE700B62165 /* XCRemoteSwiftPackageReference "FLEX" */;
+			productName = FLEX;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
