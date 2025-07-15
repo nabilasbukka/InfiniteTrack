@@ -34,6 +34,7 @@ final class ApiManager {
             AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
                 .validate({ request, response, data in
                     if let data, let responseString = String(data: data, encoding: .utf8) {
+                        print("heh")
                         print(responseString)
                     }
                     if response.statusCode >= 400, let data {

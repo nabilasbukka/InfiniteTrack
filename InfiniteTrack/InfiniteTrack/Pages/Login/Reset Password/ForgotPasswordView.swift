@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
-    @State private var email = ""
+    @EnvironmentObject var authRouter: AuthRouter
+    @State var viewModel = ForgotPasswordViewModel()
     
     @ViewBuilder
     func inputNewEmailView() -> some View {
@@ -17,8 +18,9 @@ struct ForgotPasswordView: View {
             .foregroundColor(.dark500)
             .fontWeight(.medium)
         
-        InputEmailField(email: $email)
+        InputEmailField(email: $viewModel.email)
     }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             ZStack {
@@ -35,11 +37,29 @@ struct ForgotPasswordView: View {
             
             Spacer()
             
-            PrimaryButton(title: "Next", action: {})
+            PrimaryButton(title: "Next", action: {
+                Task {
+                    await viewModel.sendEmailOTP(email: viewModel.email)
+                    await navigateToOTPVerification()
+                }
+            })
             
         }
         .padding(16)
         .pageBackground()
+        .alert(viewModel.errorMessage, isPresented: $viewModel.isAlertErrorPresented) {
+            Button("OK", role: .cancel) {
+                
+            }
+        }
+    }
+    
+    func navigateToOTPVerification() async {
+        if let otpData = viewModel.otpData {
+            authRouter.navigate(to: .veryfyEmailOTP(data: otpData, email: viewModel.email))
+        } else {
+            
+        }
     }
 }
 

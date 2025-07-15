@@ -1,37 +1,56 @@
 //
-//  ProfileView.swift
+//  DetailProfileView.swift
 //  InfiniteTrack
 //
-//  Created by Nabila Syafrina on 14/05/25.
+//  Created by Rizal Hilman on 13/07/25.
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct DetailProfileView: View {
     @StateObject private var viewModel = ProfileViewModel()
     @EnvironmentObject var loginState: LoginState
-    @EnvironmentObject var navState: NavigationState
     
     @ViewBuilder
     func profileHeader() -> some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 8) {
-                Text(viewModel.userDetail?.userName ?? "unidentified")
-                    .foregroundColor(.dark500)
-                    .font(.system(size: 24) .weight(.medium))
-                
-                Text(viewModel.userDetail?.positionName ?? "unidentified")
-                    .foregroundColor(.dark500)
-                    .font(.system(size: 14) .weight(.medium))
-            }
-            
-            Spacer()
-            
+        VStack {
             Image("img_profile")
                 .resizable()
                 .frame(width: 74, height: 74)
                 .clipShape(Circle())
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Nabila Syafrina")
+                    .foregroundColor(.dark500)
+                    .font(.system(size: 24) .weight(.medium))
+                
+                Text("Technical Web Mentor")
+                    .foregroundColor(.dark500)
+                    .font(.system(size: 14) .weight(.medium))
+            }
         }
+    }
+    
+    @ViewBuilder
+    func accountInfo(title: String, content: String) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text(content)
+                .font(.system(size: 14))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .overlay(alignment: .topLeading, content: {
+            Text(title)
+                .font(.callout)
+                .foregroundColor(.gray)
+                .offset(x: -10, y: -35)
+        })
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.white.opacity(0.5))
+                .shadow(color: Color.primary500.opacity(0.3), radius: 8, x: 0, y: 4)
+        )
+        .padding(.top, 10)
     }
     
     @ViewBuilder
@@ -45,15 +64,9 @@ struct ProfileView: View {
                 Image(systemName: "info.circle")
                     .foregroundColor(.dark500)
                 
-                NavigationLink {
-                    DetailProfileView()
-                } label: {
-                    Text("Detail Account")
-                        .foregroundColor(.dark500)
-                        .font(.system(.body) .weight(.regular))
-                }
-
-
+                Text("Detail Account")
+                    .foregroundColor(.dark500)
+                    .font(.system(.body) .weight(.regular))
                 
                 Spacer()
                 
@@ -78,32 +91,6 @@ struct ProfileView: View {
                 viewModel.onClickLogout()
                 loginState.isLoggedIn = false
             }
-            
-//            HStack {
-//                Image(systemName: "dollarsign.circle")
-//                    .foregroundColor(.dark500)
-//                
-//                Text("Pay Slip")
-//                    .foregroundColor(.dark500)
-//                    .font(.system(.body) .weight(.regular))
-//                
-//                Spacer()
-//                
-//                Image(systemName: "chevron.right")
-//            }
-//            
-//            HStack {
-//                Image(systemName: "text.document")
-//                    .foregroundColor(.dark500)
-//                
-//                Text("My Document")
-//                    .foregroundColor(.dark500)
-//                    .font(.system(.body) .weight(.regular))
-//                
-//                Spacer()
-//                
-//                Image(systemName: "chevron.right")
-//            }
         }
     }
     
@@ -173,20 +160,50 @@ struct ProfileView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 32) {
-                    profileHeader()
+        ScrollView {
+            VStack(spacing: 32) {
+                profileHeader()
+                
+                accountInfo(title: "Full Name",
+                            content: viewModel.userDetail?.userName ?? "-")
+                
+                accountInfo(title: "NIP / NIM",
+                            content: viewModel.userDetail?.nip_nim ?? "-")
+                
+                accountInfo(title: "Division",
+                            content: viewModel.userDetail?.division ?? "-")
+                
+                
+                accountInfo(title: "Position",
+                            content: viewModel.userDetail?.positionName ?? "-")
+                
+                
+                HStack {
+                    accountInfo(title: "Start Contract",
+                                content: viewModel.userDetail?.start_contract ?? "-")
                     
-                    accountInformation()
+                    accountInfo(title: "End Contract",
+                                content: viewModel.userDetail?.end_contract ?? "-")
                 }
-                .padding(28)
+                
+                accountInfo(title: "Email",
+                            content: viewModel.userDetail?.email ?? "-")
+                
+                
+                accountInfo(title: "Phone Number",
+                            content: viewModel.userDetail?.phone_number ?? "-")
+                
+                
+                accountInfo(title: "Address",
+                            content: viewModel.userDetail?.address ?? "-")
+                
             }
-            .pageBackground()
+            .padding(28)
         }
+        .pageBackground()
     }
 }
 
 #Preview {
-    ProfileView()
+    DetailProfileView()
 }

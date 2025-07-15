@@ -12,6 +12,7 @@ struct InfiniteTrackApp: App {
     @State var isShowSplash: Bool = true
     @StateObject var loginState = LoginState()
     @StateObject var navState = NavigationState()
+    @StateObject private var authRouter = AuthRouter()
     
     var body: some Scene {
         WindowGroup {
@@ -44,6 +45,7 @@ struct InfiniteTrackApp: App {
                 checkLogin()
             }
         }
+        .environmentObject(authRouter)
     }
     
     private func checkLogin() {

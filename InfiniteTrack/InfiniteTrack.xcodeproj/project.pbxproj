@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		367341142E232A9D0096C220 /* DetailProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341132E232A990096C220 /* DetailProfileView.swift */; };
+		367341162E24E2DB0096C220 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */; };
+		367341182E24E3EB0096C220 /* OTPResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341172E24E3E80096C220 /* OTPResonse.swift */; };
+		3673411C2E24E4A10096C220 /* OTPVerificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673411B2E24E4900096C220 /* OTPVerificationResponse.swift */; };
+		3673411F2E24E6A30096C220 /* EmailOTPUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673411E2E24E6990096C220 /* EmailOTPUIModel.swift */; };
+		3673413A2E24EBD60096C220 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341392E24EBD30096C220 /* AuthRouter.swift */; };
+		3673413C2E251ECD0096C220 /* InputOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673413B2E251EC90096C220 /* InputOTPViewModel.swift */; };
+		3673413E2E2546D60096C220 /* InputNewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673413D2E2546D40096C220 /* InputNewPasswordViewModel.swift */; };
+		367341402E2548350096C220 /* ResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */; };
+		367341422E2549010096C220 /* ResetPasswordUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341412E2548FB0096C220 /* ResetPasswordUIModel.swift */; };
+		367341442E254B4A0096C220 /* VerifyOTPUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341432E254B440096C220 /* VerifyOTPUIModel.swift */; };
 		C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */; };
 		C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236C2DDF110C0073976D /* InputOTPView.swift */; };
 		C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236E2DDF14900073976D /* InputNewPasswordView.swift */; };
@@ -77,6 +88,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		367341132E232A990096C220 /* DetailProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileView.swift; sourceTree = "<group>"; };
+		367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		367341172E24E3E80096C220 /* OTPResonse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResonse.swift; sourceTree = "<group>"; };
+		3673411B2E24E4900096C220 /* OTPVerificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationResponse.swift; sourceTree = "<group>"; };
+		3673411E2E24E6990096C220 /* EmailOTPUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOTPUIModel.swift; sourceTree = "<group>"; };
+		367341392E24EBD30096C220 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		3673413B2E251EC90096C220 /* InputOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPViewModel.swift; sourceTree = "<group>"; };
+		3673413D2E2546D40096C220 /* InputNewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNewPasswordViewModel.swift; sourceTree = "<group>"; };
+		3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponse.swift; sourceTree = "<group>"; };
+		367341412E2548FB0096C220 /* ResetPasswordUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordUIModel.swift; sourceTree = "<group>"; };
+		367341432E254B440096C220 /* VerifyOTPUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPUIModel.swift; sourceTree = "<group>"; };
 		C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceInfoItemView.swift; sourceTree = "<group>"; };
 		C904236C2DDF110C0073976D /* InputOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPView.swift; sourceTree = "<group>"; };
 		C904236E2DDF14900073976D /* InputNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNewPasswordView.swift; sourceTree = "<group>"; };
@@ -159,12 +181,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3673411D2E24E6880096C220 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				367341432E254B440096C220 /* VerifyOTPUIModel.swift */,
+				367341412E2548FB0096C220 /* ResetPasswordUIModel.swift */,
+				3673411E2E24E6990096C220 /* EmailOTPUIModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C90423702DDF16650073976D /* Reset Password */ = {
 			isa = PBXGroup;
 			children = (
+				3673411D2E24E6880096C220 /* Models */,
+				367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */,
 				C9EA33C92DDD8ECF00233FCC /* ForgotPasswordView.swift */,
 				C904236E2DDF14900073976D /* InputNewPasswordView.swift */,
+				3673413D2E2546D40096C220 /* InputNewPasswordViewModel.swift */,
 				C904236C2DDF110C0073976D /* InputOTPView.swift */,
+				3673413B2E251EC90096C220 /* InputOTPViewModel.swift */,
 				C98C09DA2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift */,
 			);
 			path = "Reset Password";
@@ -181,6 +217,7 @@
 		C90574342DD4567B0061EEF0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				367341132E232A990096C220 /* DetailProfileView.swift */,
 				C90574382DD481390061EEF0 /* ProfileView.swift */,
 				C91F77002E040B6E00BB235C /* ProfileViewModel.swift */,
 			);
@@ -277,6 +314,7 @@
 		C91B8AF92DDC871F004C25BC /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				367341392E24EBD30096C220 /* AuthRouter.swift */,
 				C90423702DDF16650073976D /* Reset Password */,
 				C91B8AFA2DDC8748004C25BC /* LoginView.swift */,
 				C9CB06F62DED54BD00479F2C /* LoginViewModel.swift */,
@@ -392,6 +430,9 @@
 		C9CB06F12DED534200479F2C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */,
+				3673411B2E24E4900096C220 /* OTPVerificationResponse.swift */,
+				367341172E24E3E80096C220 /* OTPResonse.swift */,
 				C9CB06F22DED535000479F2C /* LoginResponse.swift */,
 				C9CB06FA2DED5E5C00479F2C /* BasicResponse.swift */,
 				C9B861D72DEEA030001DE2B5 /* CheckinResponse.swift */,
@@ -514,8 +555,12 @@
 				C9B861DC2DEEB6C8001DE2B5 /* Encodable+Extension.swift in Sources */,
 				C9CB06F32DED535000479F2C /* LoginResponse.swift in Sources */,
 				C9B8DECC2CA51293006F4B66 /* ContentView.swift in Sources */,
+				3673413A2E24EBD60096C220 /* AuthRouter.swift in Sources */,
 				C9EC36E72E0A4A8B00B62165 /* Configuration.swift in Sources */,
 				C98C09DB2DE8A938000D6E8B /* OTPTextFieldRepresentable.swift in Sources */,
+				367341162E24E2DB0096C220 /* ForgotPasswordViewModel.swift in Sources */,
+				367341182E24E3EB0096C220 /* OTPResonse.swift in Sources */,
+				3673413C2E251ECD0096C220 /* InputOTPViewModel.swift in Sources */,
 				C9AACBEE2DF032F400D0F99D /* CalendarView.swift in Sources */,
 				C9AACBF82DF17C3600D0F99D /* ImagePicker.swift in Sources */,
 				C9EC36DD2E067CDE00B62165 /* UIApplication+Extension.swift in Sources */,
@@ -527,6 +572,7 @@
 				C91F77012E040B6E00BB235C /* ProfileViewModel.swift in Sources */,
 				C90574322DD456650061EEF0 /* HomeView.swift in Sources */,
 				C9CB06F72DED54BD00479F2C /* LoginViewModel.swift in Sources */,
+				3673413E2E2546D60096C220 /* InputNewPasswordViewModel.swift in Sources */,
 				C9AACBF62DF1703700D0F99D /* AttendanceSummaryItem.swift in Sources */,
 				C9CB06F92DED56FD00479F2C /* Collection+Extension.swift in Sources */,
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
@@ -537,11 +583,16 @@
 				C9B861E02DEEE975001DE2B5 /* String+Extension.swift in Sources */,
 				C91F77032E040CF200BB235C /* LoginState.swift in Sources */,
 				C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */,
+				367341422E2549010096C220 /* ResetPasswordUIModel.swift in Sources */,
+				367341442E254B4A0096C220 /* VerifyOTPUIModel.swift in Sources */,
 				C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */,
 				C98C09DE2DE8CB99000D6E8B /* LocationManager.swift in Sources */,
 				C9B861DE2DEEE336001DE2B5 /* AttendanceHistoryResponse.swift in Sources */,
+				367341142E232A9D0096C220 /* DetailProfileView.swift in Sources */,
+				3673411F2E24E6A30096C220 /* EmailOTPUIModel.swift in Sources */,
 				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
 				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
+				367341402E2548350096C220 /* ResetPasswordResponse.swift in Sources */,
 				C9AACBEC2DF031EA00D0F99D /* FilterAttendanceDateView.swift in Sources */,
 				C98C09E02DE8CC70000D6E8B /* HomeViewModel.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
@@ -558,6 +609,7 @@
 				C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */,
 				C9CB07002DEDBFD900479F2C /* UserDetail.swift in Sources */,
 				C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */,
+				3673411C2E24E4A10096C220 /* OTPVerificationResponse.swift in Sources */,
 				C9CB06FB2DED5E5C00479F2C /* BasicResponse.swift in Sources */,
 				C98C09E72DE96D69000D6E8B /* ApiManager.swift in Sources */,
 				C91B8AF82DDC796C004C25BC /* LiveAttendanceViewModel.swift in Sources */,

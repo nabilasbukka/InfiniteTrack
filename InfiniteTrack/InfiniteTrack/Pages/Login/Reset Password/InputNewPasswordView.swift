@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct InputNewPasswordView: View {
-    @State private var password: String = ""
-    @State private var passwordConfirmation: String = ""
+    @EnvironmentObject var authRouter: AuthRouter
+    @State var viewModel = InputNewPasswordViewModel()
     
-    var isPasswordMismatch: Bool {
-        !passwordConfirmation.isEmpty && password != passwordConfirmation
+    init(email: String) {
+        viewModel.email = email
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct InputNewPasswordView: View {
                     .frame(width: 200, height: 200)
             }
             
-            Text("Account xxxx@gmail.com")
+            Text("Account \(viewModel.email)")
                 .font(.system(size: 16))
                 .foregroundColor(.dark300)
                 .fontWeight(.regular)
@@ -37,12 +37,12 @@ struct InputNewPasswordView: View {
                 .foregroundColor(.primary500)
                 .fontWeight(.medium)
             
-            ConfirmPasswordField(password: $password)
+            ConfirmPasswordField(password: $viewModel.newPassword)
             
             VStack(spacing: 4) {
-                ConfirmPasswordField(password: $passwordConfirmation, placeholder: "Confirmation your Password")
+                ConfirmPasswordField(password: $viewModel.confirmNewPassword, placeholder: "Confirmation your Password")
                 
-                if isPasswordMismatch {
+                if viewModel.isPasswordMismatch {
                     Text("Passwords do not match")
                         .font(.system(size: 12))
                         .foregroundColor(.red)
@@ -54,13 +54,25 @@ struct InputNewPasswordView: View {
             
             Spacer()
             
-            PrimaryButton(title: "Save Password", action: {})
+            PrimaryButton(title: "Save Password", action: {
+                if !viewModel.isPasswordMismatch {
+                    Task {
+                        await viewModel.updateNewPassword(email: viewModel.email,
+                                                    newPassword: viewModel.newPassword)
+                        await navigateToLogin()
+                    }
+                }
+            })
         }
         .padding(16)
         .pageBackground()
     }
+    
+    func navigateToLogin() async {
+        authRouter.reset()
+    }
 }
 
 #Preview {
-    InputNewPasswordView()
+    InputNewPasswordView(email: "nabssyaf@gmail.com")
 }

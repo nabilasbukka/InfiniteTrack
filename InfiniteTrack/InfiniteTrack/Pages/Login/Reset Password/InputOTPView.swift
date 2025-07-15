@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct InputOTPView: View {
+    @EnvironmentObject var authRouter: AuthRouter
+    @State var viewModel = InputOTPViewModel()
     @State private var otp: String = ""
+    @State private var resendCooldown: Int = 0
+    let boxCount = 6
     
-    let boxCount = 4
+    
+    init(otpData: EmailOTPUIModel, email: String) {
+        viewModel.data = otpData
+        viewModel.email = email
+    }
     
     @ViewBuilder
     func inputOTPView() -> some View {
@@ -24,7 +32,7 @@ struct InputOTPView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.primary400.opacity(0.5), lineWidth: 2)
-                        .frame(width: 60, height: 60)
+                        .frame(width: .infinity, height: 60)
                         .background(Color.white.opacity(0.1))
                         .cornerRadius(10)
                     
@@ -46,16 +54,27 @@ struct InputOTPView: View {
             UIApplication.shared.sendAction(#selector(UIResponder.becomeFirstResponder), to: nil, from: nil, for: nil)
         }
         
-        HStack {
+        HStack(spacing: 4) {
             Text("Didn't receive the code?")
                 .font(.system(size: 14))
                 .foregroundColor(.dark200)
                 .fontWeight(.medium)
             
             Button("Resend") {
+                Task {
+                    await viewModel.resendEmailOTP()
+                    resendCooldown = 30
+                }
             }
+            .disabled(resendCooldown > 0)
             .font(.system(size: 12, weight: .medium))
-            .foregroundColor(.primary500)
+            .foregroundColor(resendCooldown > 0 ? .gray : .primary500)
+            
+            if resendCooldown > 0 {
+                Text("in \(resendCooldown)s")
+                    .font(.system(size: 12))
+                    .foregroundColor(.dark200)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
     }
@@ -76,13 +95,40 @@ struct InputOTPView: View {
             
             Spacer()
             
-            PrimaryButton(title: "Confirm", action: {})
+            PrimaryButton(title: "Confirm", action: {
+                Task {
+                    await viewModel.verifyOTP(otp: otp)
+                    
+                    if viewModel.isOTPVerified {
+                        if let email = viewModel.email {
+                            authRouter.navigate(to: .updateNewPassword(email: email))
+                        } else {
+                            print("EMAIIL NOT FOUND")
+                        }
+                    } else {
+                        print("OTP NOT MATCH")
+                    }
+                }
+                
+//                if otp == viewModel.data?.otp ?? "" {
+//                    
+//                    
+//                } else {
+//                    
+//                }
+                
+            })
         }
         .padding(16)
         .pageBackground()
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 UIApplication.shared.sendAction(#selector(UIResponder.becomeFirstResponder), to: nil, from: nil, for: nil)
+            }
+        }
+        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+            if resendCooldown > 0 {
+                resendCooldown -= 1
             }
         }
 
@@ -97,6 +143,6 @@ struct InputOTPView: View {
     }
 }
 
-#Preview {
-    InputOTPView()
-}
+//#Preview {
+//    InputOTPView(otpData: EmailOTPUIModel()
+//}

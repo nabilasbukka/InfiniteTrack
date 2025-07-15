@@ -16,4 +16,15 @@ struct UserDetail: Codable {
     let positionName: String?
     let message: String?
     let greeting: String?
+    let division: String?
+    let annualBalance: Int?
+    let annualUsed: Int?
+    let headprogramname: String?
+    let phone_number: String?
+    let nip_nim: String?
+    let address: String?
+    let start_contract: String?
+    let end_contract: String?
+    let isProfileComplete: String?
+    let profilePhoto: String?
 }

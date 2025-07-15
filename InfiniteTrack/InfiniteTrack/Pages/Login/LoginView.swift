@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authRouter: AuthRouter
     @Binding var isLoginSuccess: Bool
     @ObservedObject var viewModel: LoginViewModel = .init()
     
@@ -55,13 +56,15 @@ struct LoginView: View {
     
     @ViewBuilder
     func forgotPasswordBtn() -> some View {
+        
         Button("Forgot Password?") {
-            // Action here
+            authRouter.navigate(to: .forgotPassword)
         }
         .font(.system(size: 12, weight: .medium))
         .foregroundColor(.dark500)
         .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.top, 4)
+        
         
         PrimaryButton(title: "Sign In", isLoading: $viewModel.isLoading, action: {
             viewModel.onClickLogin()
@@ -73,28 +76,44 @@ struct LoginView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 12) {
-                bannerLoginView()
-                
-                inputEmailPasswordView()
-                
-                if viewModel.errorMessage.isNotEmpty {
-                    wrongPasswordMsgError(message: viewModel.errorMessage)
+        NavigationStack(path: $authRouter.path) {
+            ScrollView {
+                VStack(spacing: 12) {
+                    bannerLoginView()
+                    
+                    inputEmailPasswordView()
+                    
+                    if viewModel.errorMessage.isNotEmpty {
+                        wrongPasswordMsgError(message: viewModel.errorMessage)
+                    }
+                    
+                    forgotPasswordBtn()
                 }
-                
-                forgotPasswordBtn()
-
             }
-        }
-        .padding(16)
-        .pageBackground()
-        .onTapGesture {
-                UIApplication.shared.endEditing()
+            .navigationDestination(for: AuthRoute.self) { route in
+                switch route {
+                case .forgotPassword:
+                    ForgotPasswordView()
+                case .veryfyEmailOTP(let otpData, let email):
+                    InputOTPView(otpData: otpData, email: email)
+                    
+                case .updateNewPassword(let email):
+                    InputNewPasswordView(email: email)
+                }
             }
-        .onChange(of: viewModel.isLoginSuccess) {
-            isLoginSuccess = viewModel.isLoginSuccess
+            .padding(16)
+            .pageBackground()
+            .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
+            .onChange(of: viewModel.isLoginSuccess) {
+                isLoginSuccess = viewModel.isLoginSuccess
+            }
+            
         }
+        
+        
+        
     }
 }
 
