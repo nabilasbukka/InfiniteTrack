@@ -9,46 +9,88 @@ import Foundation
 
 class InputOTPViewModel: ObservableObject {
     @Published var isOTPVerified: Bool = false
+    @Published var isLoading: Bool = false
+    @Published var errorMessage: String = ""
     
-    var data: EmailOTPUIModel?
-    var email: String?
-    
-    
-    func verifyOTP(otp: String) async {
-        
-        guard let email = email else { return }
-
+    func verifyOTP(inputOTP: String, serverOTP: String, email: String) async -> Bool {
         do {
-            let response = try await UserApi.shared.verifyEmailOTP(email: email, otp: otp)
-            let uiModel = VerifyOTPUIModel(from: response)
+            let response = try await UserApi.shared.verifyEmailOTP(email: email, otp: inputOTP)
             
-            print(response)
-            print(uiModel.message)
+            return true
+        } catch let error as ApiError {
             
-            await MainActor.run {
-                self.isOTPVerified = uiModel.message == "OTP verified"
+            switch error {
+            case .generalError(let message):
+                await MainActor.run {
+                    errorMessage = message
+                }
+            case .internalServerError(let message):
+                await MainActor.run {
+                    errorMessage = message
+                }
+            default:
+                
+                break
             }
         } catch {
-            print("Error fetching attendance: \(error.localizedDescription)")
+            
+            await MainActor.run {
+                errorMessage = error.localizedDescription
+            }
+        }
+        
+        await MainActor.run {
+            isLoading = false
+        }
+        
+        return false
+    }
+    
+    func resendEmailOTP(email: String) async {
+        
+        await MainActor.run {
+            isLoading = true
+            errorMessage = ""
+        }
+        
+        Task {
+            do {
+                let response = try await UserApi.shared.sendEmailOTP(email: email)
+                await handleSuccessResend(response: response)
+            } catch let error as ApiError {
+                
+                switch error {
+                case .generalError(let message):
+                    await MainActor.run {
+                        errorMessage = message
+                    }
+                case .internalServerError(let message):
+                    await MainActor.run {
+                        errorMessage = message
+                    }
+                default:
+                    
+                    break
+                    
+                }
+            } catch {
+                
+                await MainActor.run {
+                    errorMessage = error.localizedDescription
+                }
+            }
+            await MainActor.run {
+                isLoading = false
+            }
         }
     }
     
-    func resendEmailOTP() async {
+    private func handleSuccessResend(response: OTPResponse) async {
+        let uiModel = EmailOTPUIModel(from: response)
+        print(uiModel)
         
-        guard let email = email else { return }
-
-        do {
-            let response = try await UserApi.shared.sendEmailOTP(email: email)
-            let uiModel = EmailOTPUIModel(from: response)
-            
-            print(response)
-            print(uiModel.message)
-            
-            await MainActor.run {
-                self.data = uiModel
-            }
-        } catch {
-            print("Error fetching attendance: \(error.localizedDescription)")
+        await MainActor.run {
+//            self.data = uiModel
         }
     }
     

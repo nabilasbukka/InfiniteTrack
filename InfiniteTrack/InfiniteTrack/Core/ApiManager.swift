@@ -45,10 +45,14 @@ final class ApiManager {
                         } catch {
                             message = AFError.responseSerializationFailed(reason: .decodingFailed(error: error)).localizedDescription
                         }
+                        
                         if response.statusCode < 500 {
                             
                             return .failure(ApiError.generalError(message))
                         }
+                        
+                        print("A - ", message)
+                        
                         return .failure(ApiError.internalServerError(message))
                     }
                     return .success(())

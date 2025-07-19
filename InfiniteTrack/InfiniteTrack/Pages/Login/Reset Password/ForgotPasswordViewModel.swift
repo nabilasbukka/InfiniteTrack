@@ -12,21 +12,52 @@ class ForgotPasswordViewModel: ObservableObject {
     @Published var email = ""
     @Published var otpData: EmailOTPUIModel?
     @Published var isAlertErrorPresented: Bool = false
+    @Published var isLoading: Bool = false
     @Published var errorMessage: String = ""
     
-    func sendEmailOTP(email: String) async {
+    func sendEmailOTP(email: String) async -> Bool {
+        await MainActor.run {
+            isLoading = true
+            errorMessage = ""
+            isAlertErrorPresented = false
+        }
+        
         do {
             let response = try await UserApi.shared.sendEmailOTP(email: email)
             let uiModel = EmailOTPUIModel(from: response)
             
-//            print(response)
-//            print(uiModel.message)
+            print("uiModel: ", uiModel)
             
             await MainActor.run {
                 self.otpData = uiModel
             }
+            
+            return true
+        } catch let error as ApiError {
+            await MainActor.run {
+                switch error {
+                case .generalError(let message),
+                     .internalServerError(let message):
+                    errorMessage = message
+                default:
+                    errorMessage = "Unexpected error occurred."
+                }
+                isAlertErrorPresented = true
+            }
         } catch {
-            print("Error fetching attendanceC: \(error.localizedDescription)")
+            await MainActor.run {
+                errorMessage = error.localizedDescription
+                isAlertErrorPresented = true
+            }
         }
+        
+        await MainActor.run {
+            isLoading = false
+        }
+        
+        return false
+    }
+    
+    private func handleSuccessLogin(response: OTPResponse) async {
     }
 }

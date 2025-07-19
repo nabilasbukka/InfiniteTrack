@@ -38,5 +38,6 @@ struct PrimaryButton: View {
             )
             .opacity(isEnabled ? 1.0 : 0.5)
         }
+        .disabled(!isEnabled)
     }
 }

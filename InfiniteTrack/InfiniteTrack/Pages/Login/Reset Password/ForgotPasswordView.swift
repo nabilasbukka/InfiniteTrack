@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @EnvironmentObject var authRouter: AuthRouter
-    @State var viewModel = ForgotPasswordViewModel()
+    @StateObject var viewModel = ForgotPasswordViewModel()
     
     @ViewBuilder
     func inputNewEmailView() -> some View {
@@ -19,6 +19,20 @@ struct ForgotPasswordView: View {
             .fontWeight(.medium)
         
         InputEmailField(email: $viewModel.email)
+    }
+    
+    @ViewBuilder
+    func errorMessage(message: String = "Oopss... Something went wrong!") -> some View {
+        HStack(spacing: 4) {
+            Image(systemName: "exclamationmark.circle")
+                .foregroundColor(.red)
+            
+            Text(message)
+                .foregroundColor(.red)
+                .font(.system(size: 10))
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
     
     var body: some View {
@@ -35,30 +49,29 @@ struct ForgotPasswordView: View {
             
             inputNewEmailView()
             
+            if viewModel.errorMessage.isNotEmpty {
+                errorMessage(message: viewModel.errorMessage)
+            }
+            
             Spacer()
             
-            PrimaryButton(title: "Next", action: {
+            PrimaryButton(title: "Next", isLoading: $viewModel.isLoading, action: {
                 Task {
-                    await viewModel.sendEmailOTP(email: viewModel.email)
-                    await navigateToOTPVerification()
+                    let success = await viewModel.sendEmailOTP(email: viewModel.email)
+                    if success {
+                        await navigateToOTPVerification()
+                    }
                 }
             })
-            
         }
         .padding(16)
         .pageBackground()
-        .alert(viewModel.errorMessage, isPresented: $viewModel.isAlertErrorPresented) {
-            Button("OK", role: .cancel) {
-                
-            }
-        }
     }
     
     func navigateToOTPVerification() async {
+        
         if let otpData = viewModel.otpData {
             authRouter.navigate(to: .veryfyEmailOTP(data: otpData, email: viewModel.email))
-        } else {
-            
         }
     }
 }

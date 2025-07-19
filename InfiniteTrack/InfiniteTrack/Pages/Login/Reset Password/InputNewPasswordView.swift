@@ -9,10 +9,22 @@ import SwiftUI
 
 struct InputNewPasswordView: View {
     @EnvironmentObject var authRouter: AuthRouter
-    @State var viewModel = InputNewPasswordViewModel()
+    @StateObject var viewModel = InputNewPasswordViewModel()
     
-    init(email: String) {
-        viewModel.email = email
+    var email: String
+    
+    @ViewBuilder
+    func errorMessage(message: String = "Oopss... Something went wrong!") -> some View {
+        HStack(spacing: 4) {
+            Image(systemName: "exclamationmark.circle")
+                .foregroundColor(.red)
+            
+            Text(message)
+                .foregroundColor(.red)
+                .font(.system(size: 10))
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
     
     var body: some View {
@@ -27,7 +39,7 @@ struct InputNewPasswordView: View {
                     .frame(width: 200, height: 200)
             }
             
-            Text("Account \(viewModel.email)")
+            Text("Account \(email)")
                 .font(.system(size: 16))
                 .foregroundColor(.dark300)
                 .fontWeight(.regular)
@@ -52,14 +64,21 @@ struct InputNewPasswordView: View {
                 }
             }
             
+            if viewModel.errorMessage.isNotEmpty {
+                errorMessage(message: viewModel.errorMessage)
+            }
+            
             Spacer()
             
-            PrimaryButton(title: "Save Password", action: {
+            PrimaryButton(title: "Save Password", isLoading: $viewModel.isLoading, action: {
                 if !viewModel.isPasswordMismatch {
                     Task {
-                        await viewModel.updateNewPassword(email: viewModel.email,
-                                                    newPassword: viewModel.newPassword)
-                        await navigateToLogin()
+                        let success = await viewModel.updateNewPassword(email: email, newPassword: viewModel.newPassword)
+                        
+                        if success {
+                            await navigateToLogin()
+                        }
+                        
                     }
                 }
             })

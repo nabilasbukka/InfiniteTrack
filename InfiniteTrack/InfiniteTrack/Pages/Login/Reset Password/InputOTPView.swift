@@ -9,15 +9,27 @@ import SwiftUI
 
 struct InputOTPView: View {
     @EnvironmentObject var authRouter: AuthRouter
-    @State var viewModel = InputOTPViewModel()
+    @StateObject var viewModel = InputOTPViewModel()
     @State private var otp: String = ""
     @State private var resendCooldown: Int = 0
     let boxCount = 6
     
     
-    init(otpData: EmailOTPUIModel, email: String) {
-        viewModel.data = otpData
-        viewModel.email = email
+    var otpData: EmailOTPUIModel
+    var email: String
+    
+    @ViewBuilder
+    func errorMessage(message: String = "Oopss... Something went wrong!") -> some View {
+        HStack(spacing: 4) {
+            Image(systemName: "exclamationmark.circle")
+                .foregroundColor(.red)
+            
+            Text(message)
+                .foregroundColor(.red)
+                .font(.system(size: 10))
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
     
     @ViewBuilder
@@ -62,7 +74,7 @@ struct InputOTPView: View {
             
             Button("Resend") {
                 Task {
-                    await viewModel.resendEmailOTP()
+                    await viewModel.resendEmailOTP(email: email)
                     resendCooldown = 30
                 }
             }
@@ -93,21 +105,28 @@ struct InputOTPView: View {
             
             inputOTPView()
             
+            if viewModel.errorMessage.isNotEmpty {
+                errorMessage(message: viewModel.errorMessage)
+            }
+            
             Spacer()
             
-            PrimaryButton(title: "Confirm", action: {
+            PrimaryButton(title: "Confirm", isLoading: $viewModel.isLoading, action: {
+
                 Task {
-                    await viewModel.verifyOTP(otp: otp)
-                    
-                    if viewModel.isOTPVerified {
-                        if let email = viewModel.email {
-                            authRouter.navigate(to: .updateNewPassword(email: email))
-                        } else {
-                            print("EMAIIL NOT FOUND")
-                        }
-                    } else {
-                        print("OTP NOT MATCH")
+                    let success = await viewModel.verifyOTP(inputOTP: otp, serverOTP: otpData.otp, email: email)
+                    if success {
+                        authRouter.navigate(to: .updateNewPassword(email: email))
                     }
+//                    if viewModel.isOTPVerified {
+//                        if let email = viewModel.email {
+//                            authRouter.navigate(to: .updateNewPassword(email: email))
+//                        } else {
+//                            print("EMAIIL NOT FOUND")
+//                        }
+//                    } else {
+//                        viewModel.errorMessage = "OTP is incorrect"
+//                    }
                 }
                 
 //                if otp == viewModel.data?.otp ?? "" {

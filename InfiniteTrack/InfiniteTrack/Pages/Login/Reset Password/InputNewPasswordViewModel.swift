@@ -8,9 +8,11 @@
 import SwiftUI
 
 class InputNewPasswordViewModel: ObservableObject {
-    @Published var email: String = ""
+    
     @Published var newPassword: String = ""
     @Published var confirmNewPassword: String = ""
+    @Published var errorMessage: String = ""
+    @Published var isLoading: Bool = false
     
     var isPasswordMismatch: Bool {
         !confirmNewPassword.isEmpty && newPassword != confirmNewPassword
@@ -22,20 +24,38 @@ class InputNewPasswordViewModel: ObservableObject {
         return true
     }
     
-    func updateNewPassword(email: String, newPassword: String) async {
-
+    func updateNewPassword(email: String, newPassword: String) async -> Bool {
+        
         do {
             let response = try await UserApi.shared.resetPassword(email: email, newPassword: newPassword)
-            let uiModel = ResetPasswordUIModel(from: response)
             
-            print(response)
-            print(uiModel.message)
+            return true
+        } catch let error as ApiError {
             
-            await MainActor.run {
-//                self.data = uiModel
+            switch error {
+            case .generalError(let message):
+                await MainActor.run {
+                    errorMessage = message
+                }
+            case .internalServerError(let message):
+                await MainActor.run {
+                    errorMessage = message
+                }
+            default:
+                
+                break
             }
         } catch {
-            print("Error fetching attendance: \(error.localizedDescription)")
+            
+            await MainActor.run {
+                errorMessage = error.localizedDescription
+            }
         }
+        
+        await MainActor.run {
+            isLoading = false
+        }
+        
+        return false
     }
 }
