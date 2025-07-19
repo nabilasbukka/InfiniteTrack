@@ -14,10 +14,20 @@ struct DetailProfileView: View {
     @ViewBuilder
     func profileHeader() -> some View {
         VStack {
-            Image("img_profile")
-                .resizable()
-                .frame(width: 74, height: 74)
-                .clipShape(Circle())
+            if let photoProfile = viewModel.userDetail?.profilePhoto {
+                AsyncImage(url: URL(string: photoProfile)){ result in
+                        result.image?
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .clipShape(Circle())
+                    .frame(width: 74, height: 74)
+            } else {
+                Image("img_profile")
+                    .resizable()
+                    .frame(width: 74, height: 74)
+                    .clipShape(Circle())
+            }
             
             VStack(alignment: .leading, spacing: 8) {
                 Text("Nabila Syafrina")

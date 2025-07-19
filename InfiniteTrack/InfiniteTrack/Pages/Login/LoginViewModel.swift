@@ -15,6 +15,7 @@ final class LoginViewModel: ObservableObject {
     @Published var isButtonLoginEnabled: Bool = false
     @Published var isLoginSuccess: Bool = false
     @Published var isLoading: Bool = false
+    
     private var cancellables: Set<AnyCancellable> = .init()
     
     init() {

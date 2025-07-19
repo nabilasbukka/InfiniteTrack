@@ -126,10 +126,22 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                Image("img_profile")
-                    .resizable()
-                    .frame(width: 34, height: 34)
-                    .clipShape(Circle())
+                
+                if let photoProfile = viewModel.userDetail?.profilePhoto {
+                    AsyncImage(url: URL(string: photoProfile)){ result in
+                            result.image?
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        .clipShape(Circle())
+                        .frame(width: 34, height: 34)
+                } else {
+                    Image("img_profile")
+                        .resizable()
+                        .frame(width: 34, height: 34)
+                        .clipShape(Circle())
+                }
+                
             }
             .padding(.horizontal, 16)
             
