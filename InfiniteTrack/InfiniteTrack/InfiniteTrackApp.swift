@@ -38,7 +38,7 @@ struct InfiniteTrackApp: App {
                         LoginView(isLoginSuccess: $loginState.isLoggedIn)
                     }
                 } else {
-                    ProgressView()
+                    SplashScreenView()
                 }
             }
             .onAppear {
@@ -52,6 +52,9 @@ struct InfiniteTrackApp: App {
         if let _: LoginResponse = UserDefaultsManager.shared.get(key: .user) {
             loginState.isLoggedIn = true
         }
-        isShowSplash = false
+        // Delay by seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isShowSplash = false
+        }
     }
 }

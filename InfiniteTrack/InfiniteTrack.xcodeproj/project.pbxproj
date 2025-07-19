@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		364F962F2E2BEBBA00E45A31 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F962E2E2BEBB300E45A31 /* SplashScreenView.swift */; };
 		367341142E232A9D0096C220 /* DetailProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341132E232A990096C220 /* DetailProfileView.swift */; };
 		367341162E24E2DB0096C220 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */; };
 		367341182E24E3EB0096C220 /* OTPResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341172E24E3E80096C220 /* OTPResonse.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		364F962E2E2BEBB300E45A31 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		367341132E232A990096C220 /* DetailProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileView.swift; sourceTree = "<group>"; };
 		367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		367341172E24E3E80096C220 /* OTPResonse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResonse.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		C91B6FA52DCE02A0005CF46A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				364F962E2E2BEBB300E45A31 /* SplashScreenView.swift */,
 				C9AACBF42DF13B0E00D0F99D /* MyAttendance */,
 				C91B8AF92DDC871F004C25BC /* Login */,
 				C90574352DD456860061EEF0 /* MyLeave */,
@@ -602,6 +605,7 @@
 				C9B27C302DF81EF10022181B /* AttendanceOverviewUIModel.swift in Sources */,
 				C9B27C322DF82A3A0022181B /* PopUpInformationType.swift in Sources */,
 				C90574392DD481390061EEF0 /* ProfileView.swift in Sources */,
+				364F962F2E2BEBBA00E45A31 /* SplashScreenView.swift in Sources */,
 				C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */,
 				C98C09D92DE462FF000D6E8B /* InputEmailField.swift in Sources */,
 				C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */,
