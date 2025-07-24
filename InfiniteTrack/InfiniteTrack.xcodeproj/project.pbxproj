@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		364F962F2E2BEBBA00E45A31 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F962E2E2BEBB300E45A31 /* SplashScreenView.swift */; };
+		36503D1B2E2E846500AAE12F /* FastestAttendanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36503D1A2E2E845900AAE12F /* FastestAttendanceResponse.swift */; };
+		36503D1D2E2E859700AAE12F /* FastestAttendanceUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36503D1C2E2E858A00AAE12F /* FastestAttendanceUIModel.swift */; };
+		36503D1F2E2E8C9100AAE12F /* LatestAttendanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36503D1E2E2E8C8900AAE12F /* LatestAttendanceResponse.swift */; };
+		36503D212E2E8FC900AAE12F /* LatestAttendanceUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36503D202E2E8FC100AAE12F /* LatestAttendanceUIModel.swift */; };
 		367341142E232A9D0096C220 /* DetailProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341132E232A990096C220 /* DetailProfileView.swift */; };
 		367341162E24E2DB0096C220 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */; };
 		367341182E24E3EB0096C220 /* OTPResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341172E24E3E80096C220 /* OTPResonse.swift */; };
@@ -90,6 +94,10 @@
 
 /* Begin PBXFileReference section */
 		364F962E2E2BEBB300E45A31 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		36503D1A2E2E845900AAE12F /* FastestAttendanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastestAttendanceResponse.swift; sourceTree = "<group>"; };
+		36503D1C2E2E858A00AAE12F /* FastestAttendanceUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastestAttendanceUIModel.swift; sourceTree = "<group>"; };
+		36503D1E2E2E8C8900AAE12F /* LatestAttendanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestAttendanceResponse.swift; sourceTree = "<group>"; };
+		36503D202E2E8FC100AAE12F /* LatestAttendanceUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestAttendanceUIModel.swift; sourceTree = "<group>"; };
 		367341132E232A990096C220 /* DetailProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileView.swift; sourceTree = "<group>"; };
 		367341152E24E2D50096C220 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		367341172E24E3E80096C220 /* OTPResonse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResonse.swift; sourceTree = "<group>"; };
@@ -371,6 +379,8 @@
 		C9B27C2E2DF81EB60022181B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				36503D202E2E8FC100AAE12F /* LatestAttendanceUIModel.swift */,
+				36503D1C2E2E858A00AAE12F /* FastestAttendanceUIModel.swift */,
 				C9B27C2F2DF81EF10022181B /* AttendanceOverviewUIModel.swift */,
 			);
 			path = Models;
@@ -433,6 +443,8 @@
 		C9CB06F12DED534200479F2C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				36503D1E2E2E8C8900AAE12F /* LatestAttendanceResponse.swift */,
+				36503D1A2E2E845900AAE12F /* FastestAttendanceResponse.swift */,
 				3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */,
 				3673411B2E24E4900096C220 /* OTPVerificationResponse.swift */,
 				367341172E24E3E80096C220 /* OTPResonse.swift */,
@@ -579,6 +591,7 @@
 				C9AACBF62DF1703700D0F99D /* AttendanceSummaryItem.swift in Sources */,
 				C9CB06F92DED56FD00479F2C /* Collection+Extension.swift in Sources */,
 				C90574912DD498A70061EEF0 /* HomeSummaryCardView.swift in Sources */,
+				36503D1B2E2E846500AAE12F /* FastestAttendanceResponse.swift in Sources */,
 				C91B8AFB2DDC8748004C25BC /* LoginView.swift in Sources */,
 				C9E495582DD721E0008A17A9 /* PageBackgroundViewModifier.swift in Sources */,
 				C962BA6F2DDDC99C00DED8DA /* BackButtonViewModifier.swift in Sources */,
@@ -592,10 +605,12 @@
 				C98C09DE2DE8CB99000D6E8B /* LocationManager.swift in Sources */,
 				C9B861DE2DEEE336001DE2B5 /* AttendanceHistoryResponse.swift in Sources */,
 				367341142E232A9D0096C220 /* DetailProfileView.swift in Sources */,
+				36503D212E2E8FC900AAE12F /* LatestAttendanceUIModel.swift in Sources */,
 				3673411F2E24E6A30096C220 /* EmailOTPUIModel.swift in Sources */,
 				C90574302DD451C10061EEF0 /* MainTabView.swift in Sources */,
 				C96373D92DDB2AD000807E47 /* NavigationState.swift in Sources */,
 				367341402E2548350096C220 /* ResetPasswordResponse.swift in Sources */,
+				36503D1D2E2E859700AAE12F /* FastestAttendanceUIModel.swift in Sources */,
 				C9AACBEC2DF031EA00D0F99D /* FilterAttendanceDateView.swift in Sources */,
 				C98C09E02DE8CC70000D6E8B /* HomeViewModel.swift in Sources */,
 				C97185D52DD5F505004A1F7A /* TimeOffRequestCardView.swift in Sources */,
@@ -620,6 +635,7 @@
 				C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */,
 				C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */,
 				C9B861DA2DEEB35C001DE2B5 /* AttendanceApi.swift in Sources */,
+				36503D1F2E2E8C9100AAE12F /* LatestAttendanceResponse.swift in Sources */,
 				C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */,
 				C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */,
 				C9CB06FD2DED66CF00479F2C /* UserDefaultsManager.swift in Sources */,

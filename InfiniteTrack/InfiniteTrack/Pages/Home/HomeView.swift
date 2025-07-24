@@ -52,12 +52,12 @@ struct HomeView: View {
         }
         .padding(8)
         
-        ForEach(1...3, id: \.self) { rank in
+        ForEach(viewModel.fastestAttendances, id: \.self) { attendance in
             AttendanceRankCardView(
-                rank: "\(rank)",
+                rank: "\(viewModel.fastestAttendances.firstIndex(of: attendance)! + 1)",
                 profileImage: Image("img_profile"),
-                name: "Nabila",
-                checkinTime: "08:00",
+                name: attendance.name,
+                checkinTime: attendance.check_in_time,
                 timeAgo: "5 minutes ago"
             )
             .padding(.horizontal,8)
@@ -72,12 +72,12 @@ struct HomeView: View {
         }
         .padding(8)
         
-        ForEach(1...3, id: \.self) { rank in
+        ForEach(viewModel.latestAttendances, id: \.self) { attendance in
             AttendanceRankCardView(
-                rank: "\(rank)",
+                rank: "\(viewModel.latestAttendances.firstIndex(of: attendance)! + 1)",
                 profileImage: Image("img_profile"),
-                name: "Nabila",
-                checkinTime: "08:00",
+                name: attendance.name,
+                checkinTime: attendance.check_in_time,
                 timeAgo: "5 minutes ago"
             )
             .padding(.horizontal,8)

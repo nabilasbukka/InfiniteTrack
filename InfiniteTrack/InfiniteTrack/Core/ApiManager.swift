@@ -16,8 +16,8 @@ enum ApiError: LocalizedError {
 }
 
 final class ApiManager {
-    let baseUrl: String = "https://infinitetrack.infinitelearningproject.com"
-//    let baseUrl: String = "https://dev-infinitetrack.infinitelearningproject.com"
+//    let baseUrl: String = "https://infinitetrack.infinitelearningproject.com"
+    let baseUrl: String = "https://dev-infinitetrack.infinitelearningproject.com"
     static let shared = ApiManager()
     
     func request<Response: Codable>(endpoint: String, parameters: [String: Any] = [:], method: HTTPMethod = .get) async throws -> Response {
@@ -34,10 +34,17 @@ final class ApiManager {
         return try await withCheckedThrowingContinuation { continuation in
             AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
                 .validate({ request, response, data in
+                    print(data)
+                    
                     if let data, let responseString = String(data: data, encoding: .utf8) {
                         print("heh")
                         print(responseString)
+                        print("But this")
+                        return .success(())
+                        
                     }
+                    
+                    print("Not This...")
                     if response.statusCode >= 400, let data {
                         let message: String
                         do {
@@ -56,14 +63,18 @@ final class ApiManager {
                         
                         return .failure(ApiError.internalServerError(message))
                     }
+                    
                     return .success(())
                 })
                 .responseDecodable(of: Response.self, queue: .global(qos: .background)) { response in
                     switch response.result {
                     case .success(let data):
                         // return decodable
+                        
                         continuation.resume(returning: data)
+                        
                     case .failure(let error):
+                        
                         // throw error
                         if let urlError = error.underlyingError as? URLError, urlError.code == .notConnectedToInternet {
                             continuation.resume(throwing: ApiError.noInternetConnection)

@@ -15,10 +15,13 @@ final class HomeViewModel: ObservableObject {
     @Published var currentDate: String = ""
     @Published var todayAttendance: AttendanceOverviewUIModel?
     @Published var userDetail: UserDetail?
+    @Published var fastestAttendances = [FastestAttendanceUIModel]()
+    @Published var latestAttendances = [LatestAttendanceUIModel]()
     
     init() {
         observeUserLocation()
         observeAttendanceUpdates()
+        fetchFastestAttendance()
     }
     
     private func observeAttendanceUpdates() {
@@ -66,14 +69,51 @@ final class HomeViewModel: ObservableObject {
             do {
                 let response = try await AttendanceApi.shared.getAttendanceOverview()
                 let uiModel = AttendanceOverviewUIModel(from: response)
+                
                 await MainActor.run {
                     self.todayAttendance = uiModel
                 }
+                
             } catch {
                 print("Error fetching attendance: \(error.localizedDescription)")
             }
         }
     }
     
+    func fetchFastestAttendance() {
+        Task {
+            do {
+                let response = try await AttendanceApi.shared.getFastestAttendances()
+                
+                
+                response.forEach { (attendance) in
 
+                        let uiModel = FastestAttendanceUIModel(from: attendance)
+                        self.fastestAttendances.append(uiModel)
+                    
+                }
+            
+            } catch {
+                print("Error fetching attendance: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func fetchLatestAttendance() {
+        Task {
+            do {
+                let response = try await AttendanceApi.shared.getLatestAttendances()
+                
+                
+                response.forEach { (attendance) in
+                        let uiModel = LatestAttendanceUIModel(from: attendance)
+                        self.latestAttendances.append(uiModel)
+                    
+                }
+            
+            } catch {
+                print("Error fetching attendance: \(error.localizedDescription)")
+            }
+        }
+    }
 }

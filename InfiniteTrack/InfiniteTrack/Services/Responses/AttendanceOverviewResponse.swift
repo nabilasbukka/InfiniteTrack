@@ -11,11 +11,11 @@ struct AttendanceOverviewResponse: Codable {
     struct Overview: Codable {
         let totalAttendance: Int?
         let late: String?
-        let totalAbsence: String?
+        let totalAbsence: Int?
         let totalWorkFromOffice: String?
         let totalWorkFromHome: String?
-        let activeAttendance: String?
-        let onTime: String?
+        let activeAttendance: Int?
+        let onTime: Int?
         let checkInTime: String?
         let checkOutTime: String?
         

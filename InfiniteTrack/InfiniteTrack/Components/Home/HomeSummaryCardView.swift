@@ -89,6 +89,10 @@ struct HomeSummaryCardView: View {
     }
 }
 
-//#Preview {
-//    HomeSummaryCardView(greetingMessage: "Good Morning🌞", name: "Nabila", role: "CEO", imageProfile: Image("img_profile"), availableLeaveCount: "8", leaveUsedCount: "2")
-//}
+#Preview {
+    
+    HomeSummaryCardView(greetingMessage: "Good Morning🌞", name: "Nabila", role: "CEO", imageProfile: Image("img_profile"), availableLeaveCount: "8", leaveUsedCount: "2") {
+        
+    }
+    
+}

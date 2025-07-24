@@ -34,6 +34,21 @@ final class AttendanceApi {
     }
     
     func getAttendanceOverview() async throws -> AttendanceOverviewResponse {
-        return try await ApiManager.shared.request(endpoint: "/attendance/users/overview")
+        do {
+            return try await ApiManager.shared.request(endpoint: "/attendance/users/overview")
+            
+        } catch {
+            throw error
+        }
+        
     }
+    
+    func getFastestAttendances() async throws -> [FastestAttendanceResponse] {
+        return try await ApiManager.shared.request(endpoint: "/all-attendance/filtered-fastest")
+    }
+    
+    func getLatestAttendances() async throws -> [LatestAttendanceResponse] {
+        return try await ApiManager.shared.request(endpoint: "/all-attendance/filtered-latest")
+    }
+    
 }
