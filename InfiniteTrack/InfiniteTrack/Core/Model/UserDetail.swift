@@ -20,9 +20,9 @@ struct UserDetail: Codable {
     let annualBalance: Int?
     let annualUsed: Int?
     let headprogramname: String?
-    let phone_number: String?
+    var phone_number: String?
     let nip_nim: String?
-    let address: String?
+    var address: String?
     let start_contract: String?
     let end_contract: String?
     let isProfileComplete: String?

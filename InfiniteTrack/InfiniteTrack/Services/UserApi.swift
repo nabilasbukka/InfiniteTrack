@@ -34,7 +34,28 @@ final class UserApi {
     // Get user details from UserDefault
     func getUserDetail() -> UserDetail? {
         let userDetail: UserDetail? = UserDefaultsManager.shared.get(key: .user)
+        
         return userDetail
+    }
+    
+    func updateUserProfile(userId: String, phoneNumber: String, address: String) async throws -> EditProfileResponse {
+        do {
+            return try await ApiManager.shared.request(
+                endpoint: "/users/\(userId)",
+                parameters: ["phone_number": phoneNumber, "address": address],
+                method: .put
+            )
+        } catch {
+            if let afError = error as? AFError,
+               let apiError = afError.underlyingError as? ApiError {
+                throw apiError
+            } else if let apiError = error as? ApiError {
+                throw apiError
+            } else {
+                print("Unhandled error: \(error.localizedDescription)")
+                throw NSError(domain: "", code: 3, userInfo: [NSLocalizedDescriptionKey: "Unhandled error"])
+            }
+        }
     }
     
     // Send email OTP

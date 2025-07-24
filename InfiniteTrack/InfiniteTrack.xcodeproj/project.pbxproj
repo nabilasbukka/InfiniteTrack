@@ -23,6 +23,10 @@
 		367341402E2548350096C220 /* ResetPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */; };
 		367341422E2549010096C220 /* ResetPasswordUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341412E2548FB0096C220 /* ResetPasswordUIModel.swift */; };
 		367341442E254B4A0096C220 /* VerifyOTPUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367341432E254B440096C220 /* VerifyOTPUIModel.swift */; };
+		3681A6E52E31F3100012646D /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681A6E42E31F30C0012646D /* EditProfileView.swift */; };
+		3681A6E72E320D860012646D /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681A6E62E320D810012646D /* EditProfileViewModel.swift */; };
+		3681A6E92E3213A50012646D /* EditProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681A6E82E32139F0012646D /* EditProfileResponse.swift */; };
+		3681A6EC2E3214890012646D /* EditProfileUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3681A6EB2E3214830012646D /* EditProfileUIModel.swift */; };
 		C904236B2DDEE5B50073976D /* AttendanceInfoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */; };
 		C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236C2DDF110C0073976D /* InputOTPView.swift */; };
 		C904236F2DDF14900073976D /* InputNewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C904236E2DDF14900073976D /* InputNewPasswordView.swift */; };
@@ -109,6 +113,10 @@
 		3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponse.swift; sourceTree = "<group>"; };
 		367341412E2548FB0096C220 /* ResetPasswordUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordUIModel.swift; sourceTree = "<group>"; };
 		367341432E254B440096C220 /* VerifyOTPUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPUIModel.swift; sourceTree = "<group>"; };
+		3681A6E42E31F30C0012646D /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		3681A6E62E320D810012646D /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		3681A6E82E32139F0012646D /* EditProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileResponse.swift; sourceTree = "<group>"; };
+		3681A6EB2E3214830012646D /* EditProfileUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUIModel.swift; sourceTree = "<group>"; };
 		C904236A2DDEE5B50073976D /* AttendanceInfoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceInfoItemView.swift; sourceTree = "<group>"; };
 		C904236C2DDF110C0073976D /* InputOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPView.swift; sourceTree = "<group>"; };
 		C904236E2DDF14900073976D /* InputNewPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNewPasswordView.swift; sourceTree = "<group>"; };
@@ -201,6 +209,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3681A6EA2E3214780012646D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3681A6EB2E3214830012646D /* EditProfileUIModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C90423702DDF16650073976D /* Reset Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +243,9 @@
 		C90574342DD4567B0061EEF0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3681A6EA2E3214780012646D /* Models */,
+				3681A6E62E320D810012646D /* EditProfileViewModel.swift */,
+				3681A6E42E31F30C0012646D /* EditProfileView.swift */,
 				367341132E232A990096C220 /* DetailProfileView.swift */,
 				C90574382DD481390061EEF0 /* ProfileView.swift */,
 				C91F77002E040B6E00BB235C /* ProfileViewModel.swift */,
@@ -443,6 +462,7 @@
 		C9CB06F12DED534200479F2C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				3681A6E82E32139F0012646D /* EditProfileResponse.swift */,
 				36503D1E2E2E8C8900AAE12F /* LatestAttendanceResponse.swift */,
 				36503D1A2E2E845900AAE12F /* FastestAttendanceResponse.swift */,
 				3673413F2E25482E0096C220 /* ResetPasswordResponse.swift */,
@@ -619,6 +639,7 @@
 				C9B861D82DEEA030001DE2B5 /* CheckinResponse.swift in Sources */,
 				C9B27C302DF81EF10022181B /* AttendanceOverviewUIModel.swift in Sources */,
 				C9B27C322DF82A3A0022181B /* PopUpInformationType.swift in Sources */,
+				3681A6E92E3213A50012646D /* EditProfileResponse.swift in Sources */,
 				C90574392DD481390061EEF0 /* ProfileView.swift in Sources */,
 				364F962F2E2BEBBA00E45A31 /* SplashScreenView.swift in Sources */,
 				C98EA7C52DDA05F300B29EE3 /* AttendanceHistoryView.swift in Sources */,
@@ -626,6 +647,7 @@
 				C96373D52DDB106000807E47 /* LiveAttendanceView.swift in Sources */,
 				C98C09E22DE8D715000D6E8B /* Date+Extension.swift in Sources */,
 				C904236D2DDF110C0073976D /* InputOTPView.swift in Sources */,
+				3681A6E52E31F3100012646D /* EditProfileView.swift in Sources */,
 				C9CB07002DEDBFD900479F2C /* UserDetail.swift in Sources */,
 				C9E495562DD6E554008A17A9 /* AttendanceHistoryCardItemView.swift in Sources */,
 				3673411C2E24E4A10096C220 /* OTPVerificationResponse.swift in Sources */,
@@ -635,6 +657,8 @@
 				C9B8DECA2CA51293006F4B66 /* InfiniteTrackApp.swift in Sources */,
 				C96373DB2DDB2B6E00807E47 /* FullScreenRouterView.swift in Sources */,
 				C9B861DA2DEEB35C001DE2B5 /* AttendanceApi.swift in Sources */,
+				3681A6EC2E3214890012646D /* EditProfileUIModel.swift in Sources */,
+				3681A6E72E320D860012646D /* EditProfileViewModel.swift in Sources */,
 				36503D1F2E2E8C9100AAE12F /* LatestAttendanceResponse.swift in Sources */,
 				C905748F2DD491FD0061EEF0 /* Color+Extension.swift in Sources */,
 				C9EA33CA2DDD8ECF00233FCC /* ForgotPasswordView.swift in Sources */,
