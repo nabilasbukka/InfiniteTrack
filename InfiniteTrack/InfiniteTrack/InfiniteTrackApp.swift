@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct InfiniteTrackApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State var isShowSplash: Bool = true
     @StateObject var loginState = LoginState()
     @StateObject var navState = NavigationState()
