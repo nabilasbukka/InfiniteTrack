@@ -23,8 +23,8 @@ struct AttendanceHistoryDisplayModel: Identifiable {
         self.checkInTime = response.check_in_time ?? "-"
         self.checkOutTime = response.check_out_time ?? "-"
         
-        if let checkIn = response.check_in_time?.toDate(format: "HH:mm"),
-           let checkOut = response.check_out_time?.toDate(format: "HH:mm") {
+        if let checkIn = response.check_in_time?.toDate(format: "HH:mm", timeZone: .gmt),
+           let checkOut = response.check_out_time?.toDate(format: "HH:mm", timeZone: .gmt) {
             let interval = checkOut.timeIntervalSince(checkIn)
             let hours = Int(interval) / 3600
             let minutes = (Int(interval) % 3600) / 60
