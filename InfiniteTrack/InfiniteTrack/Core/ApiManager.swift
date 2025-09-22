@@ -16,8 +16,7 @@ enum ApiError: LocalizedError {
 }
 
 final class ApiManager {
-//    let baseUrl: String = "https://infinitetrack.infinitelearningproject.com"
-    let baseUrl: String = "https://dev-infinitetrack.infinitelearningproject.com"
+    let baseUrl: String = "https://infinitetrack.infinitelearningproject.com"
     static let shared = ApiManager()
     
     func request<Response: Codable>(endpoint: String, parameters: [String: Any] = [:], method: HTTPMethod = .get) async throws -> Response {
